@@ -1,9 +1,135 @@
 [
   {
-    "objectID": "index.html#quarto",
-    "href": "index.html#quarto",
+    "objectID": "index.html#learning-goals",
+    "href": "index.html#learning-goals",
     "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "section": "Learning Goals",
+    "text": "Learning Goals"
+  },
+  {
+    "objectID": "index.html#part-i-types-of-variables-used-in-an-anova",
+    "href": "index.html#part-i-types-of-variables-used-in-an-anova",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part I: Types of Variables Used in an ANOVA",
+    "text": "Part I: Types of Variables Used in an ANOVA"
+  },
+  {
+    "objectID": "index.html#part-ii-pedros-example-for-context",
+    "href": "index.html#part-ii-pedros-example-for-context",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part II: Pedro’s Example for Context",
+    "text": "Part II: Pedro’s Example for Context"
+  },
+  {
+    "objectID": "index.html#part-iii-null-alternative-hypothesis-testing",
+    "href": "index.html#part-iii-null-alternative-hypothesis-testing",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part III: Null & Alternative Hypothesis Testing",
+    "text": "Part III: Null & Alternative Hypothesis Testing\n\nstatistical hypothesis testing**\nquantitative approach and practical meaning"
+  },
+  {
+    "objectID": "index.html#part-iv-explain-one-way-anova",
+    "href": "index.html#part-iv-explain-one-way-anova",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part IV: Explain One-Way ANOVA",
+    "text": "Part IV: Explain One-Way ANOVA"
+  },
+  {
+    "objectID": "index.html#part-v-demonstrate-f-statistic",
+    "href": "index.html#part-v-demonstrate-f-statistic",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part V: Demonstrate F-Statistic",
+    "text": "Part V: Demonstrate F-Statistic\n\nbefore explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)"
+  },
+  {
+    "objectID": "index.html#part-vi-variance-among-means",
+    "href": "index.html#part-vi-variance-among-means",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part VI: Variance AMONG MEANS",
+    "text": "Part VI: Variance AMONG MEANS\n\nANOVAs are only variance among means, name is misleading"
+  },
+  {
+    "objectID": "index.html#part-vii-f-statistic-workthrough",
+    "href": "index.html#part-vii-f-statistic-workthrough",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part VII: F-Statistic Workthrough",
+    "text": "Part VII: F-Statistic Workthrough\n\nwhy is penalization important\nmakes sampling error important"
+  },
+  {
+    "objectID": "index.html#part-viii-what-des-data-look-like-in-r",
+    "href": "index.html#part-viii-what-des-data-look-like-in-r",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part VIII: What des data look like in R?",
+    "text": "Part VIII: What des data look like in R?"
+  },
+  {
+    "objectID": "index.html#part-ix-anova-code",
+    "href": "index.html#part-ix-anova-code",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part IX: ANOVA code",
+    "text": "Part IX: ANOVA code\n\nuse aov not lm"
+  },
+  {
+    "objectID": "index.html#part-x-t2-f-for-two-groups",
+    "href": "index.html#part-x-t2-f-for-two-groups",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part X: t2 = F for two groups",
+    "text": "Part X: t2 = F for two groups\n\nmake demonstration via code\nor t = sqrt(F)"
+  },
+  {
+    "objectID": "index.html#part-xi-statistical-conclsion-of-example",
+    "href": "index.html#part-xi-statistical-conclsion-of-example",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XI: Statistical Conclsion of Example",
+    "text": "Part XI: Statistical Conclsion of Example"
+  },
+  {
+    "objectID": "index.html#part-xii-reporting-of-anova-tables",
+    "href": "index.html#part-xii-reporting-of-anova-tables",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XII: Reporting of ANOVA Tables",
+    "text": "Part XII: Reporting of ANOVA Tables\n** NO ACCEPTING HO**"
+  },
+  {
+    "objectID": "index.html#part-xiii-how-was-f-distribution-built-from-anova-perspective",
+    "href": "index.html#part-xiii-how-was-f-distribution-built-from-anova-perspective",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XIII: How was F Distribution Built from ANOVA perspective?",
+    "text": "Part XIII: How was F Distribution Built from ANOVA perspective?\n\ndiagram"
+  },
+  {
+    "objectID": "index.html#part-xiv-anova-r-output",
+    "href": "index.html#part-xiv-anova-r-output",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XIV: ANOVA R output",
+    "text": "Part XIV: ANOVA R output"
+  },
+  {
+    "objectID": "index.html#part-xv-automatically-one-tailed-test-bc-f-is-squared",
+    "href": "index.html#part-xv-automatically-one-tailed-test-bc-f-is-squared",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XV: Automatically one-tailed test bc F is squared",
+    "text": "Part XV: Automatically one-tailed test bc F is squared"
+  },
+  {
+    "objectID": "index.html#part-xvi-statistical-hypothesis-testing---research-conclusion",
+    "href": "index.html#part-xvi-statistical-hypothesis-testing---research-conclusion",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XVI: Statistical Hypothesis Testing -> Research Conclusion",
+    "text": "Part XVI: Statistical Hypothesis Testing -> Research Conclusion"
+  },
+  {
+    "objectID": "index.html#part-xvii-anova-assumptions",
+    "href": "index.html#part-xvii-anova-assumptions",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "Part XVII: ANOVA Assumptions",
+    "text": "Part XVII: ANOVA Assumptions"
+  },
+  {
+    "objectID": "index.html#notes",
+    "href": "index.html#notes",
+    "title": "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)",
+    "section": "NOTES:",
+    "text": "NOTES:\n1-2 min break every 20 min 75 min lecture matching tutorial lecture slides 1 day before - 1 slide/page and 3 slides/page"
   }
 ]

@@ -7,6 +7,57 @@ format:
     theme: night
 ---
 
-## Quarto
+## Learning Goals 
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Part I: Types of Variables Used in an ANOVA
+
+## Part II: Pedro's Example for Context 
+
+## Part III: Null & Alternative Hypothesis Testing 
+- statistical hypothesis testing**
+- quantitative approach and practical meaning
+
+## Part IV: Explain One-Way ANOVA
+
+## Part V: Demonstrate F-Statistic 
+- before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)
+
+## Part VI: Variance AMONG MEANS 
+- ANOVAs are only variance among means, name is misleading 
+
+## Part VII: F-Statistic Workthrough 
+- why is penalization important
+- makes sampling error important
+
+## Part VIII: What des data look like in R?
+
+## Part IX: ANOVA code 
+- use aov not lm
+
+## Part X: t2 = F for two groups 
+- make demonstration via code
+- or t = sqrt(F)
+
+## Part XI: Statistical Conclsion of Example
+
+## Part XII: Reporting of ANOVA Tables
+
+** NO ACCEPTING HO** 
+
+## Part XIII: How was F Distribution Built from ANOVA perspective?
+- diagram
+
+## Part XIV: ANOVA R output
+
+## Part XV: Automatically one-tailed test bc F is squared
+
+## Part XVI: Statistical Hypothesis Testing -> Research Conclusion 
+
+## Part XVII: ANOVA Assumptions 
+
+
+## NOTES: 
+1-2 min break every 20 min 
+75 min lecture 
+matching tutorial 
+lecture slides 1 day before - 1 slide/page and 3 slides/page
