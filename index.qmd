@@ -1,7 +1,10 @@
 ---
 title: "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)"
 author: Isabella Richmond & Pedro Peres-Neto
-format: revealjs
+date: November 10, 2022
+format: 
+  revealjs:
+    theme: night
 ---
 
 ## Quarto
