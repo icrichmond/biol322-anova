@@ -1,5 +1,5 @@
 ---
-title: "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)"
+title: "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)"
 author: Isabella Richmond & Pedro Peres-Neto
 date: November 10, 2022
 format: 
@@ -7,7 +7,18 @@ format:
     theme: night
 ---
 
-## Learning Goals 
+## Learning Goals
+
+::: incremental
+- Understand what an ANOVA is 
+- Understand when/how to use an ANOVA
+- Understand what a F-statistic is and where it comes from
+- Be able to differentiate between statistical & research conclusions
+:::
+
+
+## History of ANOVA
+
 
 
 ## Part I: Types of Variables Used in an ANOVA
