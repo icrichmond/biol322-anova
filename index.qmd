@@ -10,16 +10,26 @@ format:
 ## Learning Goals
 
 ::: incremental
-- Understand what an ANOVA is 
-- Understand when/how to use an ANOVA
-- Understand what a F-statistic is and where it comes from
-- Be able to differentiate between statistical & research conclusions
+- *Understand* what an ANOVA is 
+- *Understand* when/how to use an ANOVA
+- *Understand* what a F-statistic is and where it comes from
+- *Differentiate* between statistical & research conclusions
 :::
 
 
-## History of ANOVA
+## History of ANOVAs
 
+::: {layout-ncol=2}
+- Invented by Sir R.A. Fisher ("father of modern statistics")
+- Used to prove differences between groups to support eugenics & other racist theories
 
+![](presentation_imgs/fisher.JPG)
+
+:::
+
+::: aside
+[Wikipedia](https://en.wikipedia.org/wiki/Ronald_Fisher)
+:::
 
 ## Part I: Types of Variables Used in an ANOVA
 
