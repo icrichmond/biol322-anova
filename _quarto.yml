@@ -1,5 +1,6 @@
 project:
   title: "biol322-anova"
-
+  type: website
+  output-dir: docs
 
 
