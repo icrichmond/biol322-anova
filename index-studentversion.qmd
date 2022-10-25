@@ -9,69 +9,87 @@ format:
 
 ## Learning Goals 
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part I: Types of Variables Used in an ANOVA
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part II: Pedro's Example for Context 
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part III: Null & Alternative Hypothesis Testing 
 - statistical hypothesis testing**
 - quantitative approach and practical meaning
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part IV: Explain One-Way ANOVA
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part V: Demonstrate F-Statistic 
 - before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part VI: Variance AMONG MEANS 
 - ANOVAs are only variance among means, name is misleading 
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part VII: F-Statistic Workthrough 
 - why is penalization important
 - makes sampling error important
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part VIII: What des data look like in R?
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part IX: ANOVA code 
 - use aov not lm
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part X: t2 = F for two groups 
 - make demonstration via code
 - or t = sqrt(F)
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XI: Statistical Conclsion of Example
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XII: Reporting of ANOVA Tables
 
 ** NO ACCEPTING HO** 
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XIII: How was F Distribution Built from ANOVA perspective?
 - diagram
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XIV: ANOVA R output
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XV: Automatically one-tailed test bc F is squared
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XVI: Statistical Hypothesis Testing -> Research Conclusion
 
+## {background-image="presentation_imgs/notes.png"}
 
 ## Part XVII: ANOVA Assumptions
 
+## {background-image="presentation_imgs/notes.png"}
 
 
 ## NOTES: 
