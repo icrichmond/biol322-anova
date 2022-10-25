@@ -1,5 +1,7 @@
 ---
-title: "biol322-anova"
+title: "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)"
+author: Isabella Richmond & Pedro Peres-Neto
+format: revealjs
 ---
 
 ## Quarto
