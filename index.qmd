@@ -7,6 +7,8 @@ format:
     theme: night
 ---
 
+
+
 ## Learning Goals
 
 ::: incremental
@@ -17,32 +19,47 @@ format:
 :::
 
 
+
+## When do I use an ANOVA?
+::: incremental
+- You have groups! 
+- We are explaining <w style = "color: #2c4b27"> *continuous* </w> dependent variables using <w style = "color: #574571"> **categorical** </w> independent variables 
+  - i.e., if you want to know if there are differences between more than two <w style = "color: #574571"> groups </w>
+:::
+
+
+
+## One-Way ANOVAs
+
+
+
+
 ## History of ANOVAs
 
 ::: {layout-ncol=2}
 - Invented by Sir R.A. Fisher ("father of modern statistics")
-- Used to prove differences between groups to support eugenics & other racist theories
+- Used to prove differences between groups to support eugenics (among other things)
 
 ![](presentation_imgs/fisher.JPG)
-
 :::
 
 ::: aside
 [Wikipedia](https://en.wikipedia.org/wiki/Ronald_Fisher)
 :::
 
-## Part I: Types of Variables Used in an ANOVA
+
+
+
 
 
 ## Part II: Pedro's Example for Context 
+
 
 
 ## Part III: Null & Alternative Hypothesis Testing 
 - statistical hypothesis testing**
 - quantitative approach and practical meaning
 
-
-## Part IV: Explain One-Way ANOVA
 
 
 ## Part V: Demonstrate F-Statistic 
@@ -56,7 +73,6 @@ format:
 ## Part VII: F-Statistic Workthrough 
 - why is penalization important
 - makes sampling error important
-
 
 ## Part VIII: What des data look like in R?
 

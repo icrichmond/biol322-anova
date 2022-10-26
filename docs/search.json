@@ -138,5 +138,33 @@
     "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
     "section": "History of ANOVA",
     "text": "History of ANOVA\n\n\n\n\nInvented by Sir R.A. Fisher (“father of modern statistics”)\nUsed to prove differences between groups to support eugenics & other racist theories\n\n\n\n\n\n\n\n\n\nWikipedia"
+  },
+  {
+    "objectID": "index.html#history-of-anovas",
+    "href": "index.html#history-of-anovas",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "History of ANOVAs",
+    "text": "History of ANOVAs\n\n\n\n\nInvented by Sir R.A. Fisher (“father of modern statistics”)\nUsed to prove differences between groups to support eugenics (among other things)\n\n\n\n\n\n\n\n\n\nWikipedia"
+  },
+  {
+    "objectID": "index.html#types-of-variables-used-in-an-anova",
+    "href": "index.html#types-of-variables-used-in-an-anova",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "Types of Variables Used in an ANOVA",
+    "text": "Types of Variables Used in an ANOVA\n\n\nGroups!\nWe are explaining  continuous  dependent variables using  categorical  independent variables\n\n continuous  : intelligence (i.e., IQ ranging from 70-130)\n categorical  : race (i.e., white, Black, Indigenous, etc.)"
+  },
+  {
+    "objectID": "index.html#when-do-i-use-an-anova",
+    "href": "index.html#when-do-i-use-an-anova",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "When do I use an ANOVA?",
+    "text": "When do I use an ANOVA?\n\n\nYou have groups!\nWe are explaining  continuous  dependent variables using  categorical  independent variables\n\ni.e., if you want to know if there are differences between more than two  groups"
+  },
+  {
+    "objectID": "index.html#one-way-anovas",
+    "href": "index.html#one-way-anovas",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "One-Way ANOVAs",
+    "text": "One-Way ANOVAs"
   }
 ]
