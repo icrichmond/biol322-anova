@@ -7,11 +7,11 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.251">
+  <meta name="generator" content="quarto-1.2.237">
 
   <meta name="author" content="Isabella Richmond &amp; Pedro Peres-Neto">
   <meta name="dcterms.date" content="2022-11-10">
-  <title>BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</title>
+  <title>biol322-anova - BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -324,26 +324,30 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</h1>
-  <p class="author">Isabella Richmond &amp; Pedro Peres-Neto</p>
-  <p class="date">November 10, 2022</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Isabella Richmond &amp; Pedro Peres-Neto 
+</div>
+</div>
+</div>
+
+  <p class="date">11/10/22</p>
+</section>
 <section id="learning-goals" class="slide level2">
 <h2>Learning Goals</h2>
-<div>
 <ul>
 <li class="fragment"><em>Understand</em> what an ANOVA is</li>
 <li class="fragment"><em>Understand</em> when/how to use an ANOVA</li>
 <li class="fragment"><em>Understand</em> what a F-statistic is and where it comes from</li>
 <li class="fragment"><em>Differentiate</em> between statistical &amp; research conclusions</li>
 </ul>
-</div>
 </section>
 <section id="when-do-i-use-an-anova" class="slide level2">
 <h2>When do I use an ANOVA?</h2>
-<div>
 <ul>
 <li class="fragment">You have groups!</li>
 <li class="fragment">We are explaining <w style="color: #2c4b27"> <em>continuous</em> </w> dependent variables using <w style="color: #574571"> <strong>categorical</strong> </w> independent variables
@@ -351,10 +355,24 @@
 <li class="fragment">i.e., if you want to know if there are differences between more than two <w style="color: #574571"> groups </w></li>
 </ul></li>
 </ul>
-</div>
 </section>
 <section id="one-way-anovas" class="slide level2">
 <h2>One-Way ANOVAs</h2>
+<div>
+<ul>
+<li>One-way = <strong>one</strong> <w style="color: #574571"> categorical </w> explanatory variable</li>
+<li>Statistical test used to compare variation across means of 2+ <w style="color: #574571"> groups </w></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="history-of-anovas" class="slide level2">
 <h2>History of ANOVAs</h2>
@@ -362,8 +380,8 @@
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <ul>
-<li>Invented by Sir R.A. Fisher (“father of modern statistics”)</li>
-<li>Used to prove differences between groups to support eugenics (among other things)</li>
+<li class="fragment">Invented by Sir R.A. Fisher (“father of modern statistics”)</li>
+<li class="fragment">Used to prove differences between groups to support eugenics (among other things)</li>
 </ul>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -375,33 +393,54 @@
 <aside><div>
 <p><a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Wikipedia</a></p>
 </div></aside></section>
-<section id="part-ii-pedros-example-for-context" class="slide level2">
-<h2>Part II: Pedro’s Example for Context</h2>
+<section id="example---knees-are-the-new-eyeballs" class="slide level2">
+<h2>Example - knees are the new eyeballs??</h2>
+<p>Background:</p>
+</section>
+<section id="example---knees-are-the-new-eyeballs-1" class="slide level2">
+<h2>Example - knees are the new eyeballs??</h2>
+<div class="columns">
+<div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_imgs/phasedelay.jpeg"></p>
+<p></p><figcaption>Figure 1. Phase Delay</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_imgs/phaseadvance.jpeg"></p>
+<p></p><figcaption>Figure 2. Phase Advance</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="part-iii-null-alternative-hypothesis-testing" class="slide level2">
 <h2>Part III: Null &amp; Alternative Hypothesis Testing</h2>
 <ul>
-<li>statistical hypothesis testing**</li>
-<li>quantitative approach and practical meaning</li>
+<li class="fragment">statistical hypothesis testing**</li>
+<li class="fragment">quantitative approach and practical meaning</li>
 </ul>
 </section>
 <section id="part-v-demonstrate-f-statistic" class="slide level2">
 <h2>Part V: Demonstrate F-Statistic</h2>
 <ul>
-<li>before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)</li>
+<li class="fragment">before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)</li>
 </ul>
 </section>
 <section id="part-vi-variance-among-means" class="slide level2">
 <h2>Part VI: Variance AMONG MEANS</h2>
 <ul>
-<li>ANOVAs are only variance among means, name is misleading</li>
+<li class="fragment">ANOVAs are only variance among means, name is misleading</li>
 </ul>
 </section>
 <section id="part-vii-f-statistic-workthrough" class="slide level2">
 <h2>Part VII: F-Statistic Workthrough</h2>
 <ul>
-<li>why is penalization important</li>
-<li>makes sampling error important</li>
+<li class="fragment">why is penalization important</li>
+<li class="fragment">makes sampling error important</li>
 </ul>
 </section>
 <section id="part-viii-what-des-data-look-like-in-r" class="slide level2">
@@ -410,14 +449,14 @@
 <section id="part-ix-anova-code" class="slide level2">
 <h2>Part IX: ANOVA code</h2>
 <ul>
-<li>use aov not lm</li>
+<li class="fragment">use aov not lm</li>
 </ul>
 </section>
 <section id="part-x-t2-f-for-two-groups" class="slide level2">
 <h2>Part X: t2 = F for two groups</h2>
 <ul>
-<li>make demonstration via code</li>
-<li>or t = sqrt(F)</li>
+<li class="fragment">make demonstration via code</li>
+<li class="fragment">or t = sqrt(F)</li>
 </ul>
 </section>
 <section id="part-xi-statistical-conclsion-of-example" class="slide level2">
@@ -430,7 +469,7 @@
 <section id="part-xiii-how-was-f-distribution-built-from-anova-perspective" class="slide level2">
 <h2>Part XIII: How was F Distribution Built from ANOVA perspective?</h2>
 <ul>
-<li>diagram</li>
+<li class="fragment">diagram</li>
 </ul>
 </section>
 <section id="part-xiv-anova-r-output" class="slide level2">
@@ -664,6 +703,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -702,7 +779,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -740,24 +834,42 @@
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

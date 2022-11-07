@@ -4,7 +4,7 @@
     "href": "index.html#learning-goals",
     "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
     "section": "Learning Goals",
-    "text": "Learning Goals\n\n\nUnderstand what an ANOVA is\nUnderstand when/how to use an ANOVA\nUnderstand what a F-statistic is and where it comes from\nDifferentiate between statistical & research conclusions"
+    "text": "Learning Goals\n\nUnderstand what an ANOVA is\nUnderstand when/how to use an ANOVA\nUnderstand what a F-statistic is and where it comes from\nDifferentiate between statistical & research conclusions"
   },
   {
     "objectID": "index.html#part-i-types-of-variables-used-in-an-anova",
@@ -158,13 +158,34 @@
     "href": "index.html#when-do-i-use-an-anova",
     "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
     "section": "When do I use an ANOVA?",
-    "text": "When do I use an ANOVA?\n\n\nYou have groups!\nWe are explaining  continuous  dependent variables using  categorical  independent variables\n\ni.e., if you want to know if there are differences between more than two  groups"
+    "text": "When do I use an ANOVA?\n\nYou have groups!\nWe are explaining  continuous  dependent variables using  categorical  independent variables\n\ni.e., if you want to know if there are differences between more than two  groups"
   },
   {
     "objectID": "index.html#one-way-anovas",
     "href": "index.html#one-way-anovas",
     "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
     "section": "One-Way ANOVAs",
-    "text": "One-Way ANOVAs"
+    "text": "One-Way ANOVAs\n\n\nOne-way = one  categorical  explanatory variable\nStatistical test used to compare variation across means of 2+  groups"
+  },
+  {
+    "objectID": "index.html#example---knees-are-the-new-eyeballs",
+    "href": "index.html#example---knees-are-the-new-eyeballs",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are the new eyeballs??",
+    "text": "Example - knees are the new eyeballs??\nBackground:"
+  },
+  {
+    "objectID": "index.html#example---knees-are-the-new-eyeballs-1",
+    "href": "index.html#example---knees-are-the-new-eyeballs-1",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are the new eyeballs??",
+    "text": "Example - knees are the new eyeballs??\n\n\n\n\n\nFigure 1. Phase Delay\n\n\n\n\n\n\nFigure 2. Phase Advance"
+  },
+  {
+    "objectID": "index.html#example---knees-are-the-new-eyeballs-2",
+    "href": "index.html#example---knees-are-the-new-eyeballs-2",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are the new eyeballs??",
+    "text": "Example - knees are the new eyeballs??\n\nFigure 2"
   }
 ]

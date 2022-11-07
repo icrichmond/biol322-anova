@@ -5,32 +5,45 @@ date: November 10, 2022
 format: 
   revealjs:
     theme: night
+    incremental: true
 ---
 
 
 
 ## Learning Goals
 
-::: incremental
 - *Understand* what an ANOVA is 
 - *Understand* when/how to use an ANOVA
 - *Understand* what a F-statistic is and where it comes from
 - *Differentiate* between statistical & research conclusions
-:::
 
 
 
 ## When do I use an ANOVA?
-::: incremental
+
 - You have groups! 
 - We are explaining <w style = "color: #2c4b27"> *continuous* </w> dependent variables using <w style = "color: #574571"> **categorical** </w> independent variables 
   - i.e., if you want to know if there are differences between more than two <w style = "color: #574571"> groups </w>
-:::
 
 
 
 ## One-Way ANOVAs
 
+:::nonincremental
+- One-way = **one**  <w style = "color: #574571"> categorical </w> explanatory variable 
+- Statistical test used to compare variation across means of 2+ <w style = "color: #574571"> groups </w>
+
+```{r, echo = F, eval = T, fig.align='center'}
+library(ggpubr)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
+  labs(y = "", x = "") + 
+  theme(legend.position = "none",
+        axis.text.x = element_blank())
+
+```
+
+:::
 
 
 
@@ -49,11 +62,27 @@ format:
 
 
 
+## Example - knees are the new eyeballs??
+
+Background: photoreceptor cells influence our circadian rhythm
+- traditionally thought that mammals only have these kinds of cells in our eyeballs 
+- created an experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
+- 
 
 
 
-## Part II: Pedro's Example for Context 
+## Example - knees are the new eyeballs??
 
+:::: {.columns}
+
+::: {.column}
+![Figure 1. Phase Delay](presentation_imgs/phasedelay.jpeg)
+:::
+
+::: {.column}
+![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg)
+:::
+::::
 
 
 ## Part III: Null & Alternative Hypothesis Testing 
