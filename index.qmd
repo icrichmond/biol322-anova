@@ -464,14 +464,18 @@ summary(a)
 
 
 
-## Part XV: Automatically one-tailed test bc F is squared
+## ANOVAs are one-tailed tests
 
 
 
 
-## Statistical Hypothesis Testing -> Research Conclusion
 
+## Research Conclusion
 
+- Statistical conclusion = H~0~ is rejected, groups are statistically different 
+- **Research conclusion** = there is a difference in the changes of circadian rhythm between control, knee, and eyes groups 
+  - Previously reported study may be wrong 
+  - We could do some post-hoc tests to determine where the differences are
 
 
 ## Part XVII: ANOVA Assumptions
@@ -479,8 +483,9 @@ summary(a)
 
 
 
-## Questions!
+## Questions?
 
 :::nonincremental
+- Thank you!! 
 - Extra videos on course bookdown
 :::
