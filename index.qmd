@@ -295,19 +295,77 @@ summary(anova)
 - or t = sqrt(F)
 
 
-## Part XI: Statistical Conclusion of Example
+## Statistical Conclusion
+- We reject H~0~, the groups are significantly different from one another (statistically)
+- ANOVAs only tell us if there is a difference, this is the entire statistical conclusion
+- We **do not accept H~0~**, we only fail to reject
+
+```{r, echo = F, eval = T, fig.align='center'}
+library(ggpubr)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
+  labs(y = "Change in Melatonin Phase", x = "Treatment Group") + 
+  theme(legend.position='none')
+```
 
 
-## Part XII: Reporting of ANOVA Tables
 
-** NO ACCEPTING HO** 
+## Reporting ANOVAs
+
 
 
 ## Part XIII: How was F Distribution Built from ANOVA perspective?
 - diagram
 
 
-## Part XIV: ANOVA R output
+## ANOVA R Output
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '4,5'
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df)
+
+# look at raw output 
+print(anova)
+
+# look at summary table
+summary(anova)
+
+```
+
+Output:
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+a <- aov(shift~treatment, d)
+print(a)
+```
+
+
+
+## ANOVA R Output
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '7,8'
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df)
+
+# look at raw output 
+print(anova)
+
+# look at summary table
+summary(anova)
+
+```
+
+Output: 
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+a <- aov(shift~treatment, d)
+summary(a)
+```
+
 
 
 ## Part XV: Automatically one-tailed test bc F is squared

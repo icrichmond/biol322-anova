@@ -648,12 +648,17 @@
 <li class="fragment">or t = sqrt(F)</li>
 </ul>
 </section>
-<section id="part-xi-statistical-conclusion-of-example" class="slide level2">
-<h2>Part XI: Statistical Conclusion of Example</h2>
-</section>
-<section id="part-xii-reporting-of-anova-tables" class="slide level2">
-<h2>Part XII: Reporting of ANOVA Tables</h2>
-<p>** NO ACCEPTING HO**</p>
+<section id="statistical-conclusion" class="slide level2">
+<h2>Statistical Conclusion</h2>
+<ul>
+<li class="fragment">We reject H<sub>0</sub>, the groups are significantly different from one another (statistically)</li>
+<li class="fragment">ANOVAs only tell us if there is a difference, this is the entire statistical conclusion</li>
+<li class="fragment">We <strong>do not accept H<sub>0</sub></strong>, we only fail to reject</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="reporting-anovas" class="slide level2">
+<h2>Reporting ANOVAs</h2>
 </section>
 <section id="part-xiii-how-was-f-distribution-built-from-anova-perspective" class="slide level2">
 <h2>Part XIII: How was F Distribution Built from ANOVA perspective?</h2>
@@ -661,8 +666,56 @@
 <li class="fragment">diagram</li>
 </ul>
 </section>
-<section id="part-xiv-anova-r-output" class="slide level2">
-<h2>Part XIV: ANOVA R output</h2>
+<section id="anova-r-output" class="slide level2">
+<h2>ANOVA R Output</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># use function `aov` to perform an anova</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># look at raw output </span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">print</span>(anova)</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># look at summary table</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Output:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+   aov(formula = shift ~ treatment, data = d)
+
+Terms:
+                treatment Residuals
+Sum of Squares   7.224492  9.415345
+Deg. of Freedom         2        19
+
+Residual standard error: 0.7039492
+Estimated effects may be unbalanced</code></pre>
+</div>
+</div>
+</section>
+<section id="anova-r-output-1" class="slide level2">
+<h2>ANOVA R Output</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># use function `aov` to perform an anova</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># look at raw output </span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">print</span>(anova)</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># look at summary table</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Output:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+treatment    2  7.224   3.612   7.289 0.00447 **
+Residuals   19  9.415   0.496                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
 </section>
 <section id="part-xv-automatically-one-tailed-test-bc-f-is-squared" class="slide level2">
 <h2>Part XV: Automatically one-tailed test bc F is squared</h2>

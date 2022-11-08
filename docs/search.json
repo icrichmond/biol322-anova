@@ -320,5 +320,33 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "ANOVAs in R",
     "text": "ANOVAs in R\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)\n\n# ensure that your group variable is coded as a factor\ndf$treatment <- as.factor(df$treatment)\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at summary table\nsummary(anova)"
+  },
+  {
+    "objectID": "index.html#statistical-conclusion",
+    "href": "index.html#statistical-conclusion",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Statistical Conclusion",
+    "text": "Statistical Conclusion\n\nWe reject H0, the groups are significantly different from one another (statistically)\nANOVAs only tell us if there is a difference, this is the entire statistical conclusion\nWe do not accept H0, we only fail to reject"
+  },
+  {
+    "objectID": "index.html#reporting-anovas",
+    "href": "index.html#reporting-anovas",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Reporting ANOVAs",
+    "text": "Reporting ANOVAs"
+  },
+  {
+    "objectID": "index.html#anova-r-output",
+    "href": "index.html#anova-r-output",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVA R Output",
+    "text": "ANOVA R Output\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at raw output \nprint(anova)\n\n# look at summary table\nsummary(anova)\n\nOutput:\n\n\nCall:\n   aov(formula = shift ~ treatment, data = d)\n\nTerms:\n                treatment Residuals\nSum of Squares   7.224492  9.415345\nDeg. of Freedom         2        19\n\nResidual standard error: 0.7039492\nEstimated effects may be unbalanced"
+  },
+  {
+    "objectID": "index.html#anova-r-output-1",
+    "href": "index.html#anova-r-output-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVA R Output",
+    "text": "ANOVA R Output\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at raw output \nprint(anova)\n\n# look at summary table\nsummary(anova)\n\nOutput:\n\n\n            Df Sum Sq Mean Sq F value  Pr(>F)   \ntreatment    2  7.224   3.612   7.289 0.00447 **\nResiduals   19  9.415   0.496                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
   }
 ]
