@@ -605,7 +605,7 @@
 <ul>
 <li class="fragment">Penalization for within group variation is important because it makes <strong>sampling error</strong> very important</li>
 </ul>
-<p><span class="math display">\[F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\]</span></p>
+<p><span class="math display">\[F = \frac{s^2_{between}}{s^2_{within}} = \frac{\frac{\sum \limits _{i=1} ^{g}  (\bar X_{i}-\bar{\bar{X}})^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-\bar X_{i})^2}{(n-g)}}\]</span></p>
 </section>
 <section id="break-1" class="slide level2">
 <h2>BREAK</h2>
@@ -641,12 +641,70 @@
 <span id="cb2-12"><a href="#cb2-12"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="part-x-t2-f-for-two-groups" class="slide level2">
-<h2>Part X: t2 = F for two groups</h2>
+<section id="comparison-of-two-groups" class="slide level2">
+<h2>Comparison of Two Groups</h2>
+<div>
 <ul>
-<li class="fragment">make demonstration via code</li>
-<li class="fragment">or t = sqrt(F)</li>
+<li><span class="math inline">\(t^2 = F\)</span> when you are comparing two groups</li>
 </ul>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="8,9,10,11,12,13,14,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># read in data </span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/biol322/data/chap15e1KneesWhoSayNight.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">View</span>(df)</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># ensure that your group variable is coded as a factor</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>df<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df<span class="sc">$</span>treatment)</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># subset to 2 groups - control &amp; knees</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>df_s <span class="ot">&lt;-</span> df[df<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"control"</span> <span class="sc">|</span> df<span class="sc">$</span>treatment <span class="sc">==</span> <span class="st">"knee"</span>, ]</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># use function `aov` to perform an anova</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df_s)</span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># use function `t.test` to perform a two sample t-test</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>ttest <span class="ot">&lt;-</span> <span class="fu">t.test</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df_s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="comparison-of-two-groups-1" class="slide level2">
+<h2>Comparison of Two Groups</h2>
+<div>
+<ul>
+<li><span class="math inline">\(t^2 = F\)</span>
+<ul>
+<li><span class="math inline">\(0.073^2 = 0.005\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column">
+<p>ANOVA:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
+treatment    1  0.003  0.0027   0.005  0.942
+Residuals   13  6.422  0.4940               </code></pre>
+</div>
+</div>
+</div><div class="column">
+<p>t-test:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  shift by treatment
+t = 0.072846, df = 11.343, p-value = 0.9432
+alternative hypothesis: true difference in means between group control and group knee is not equal to 0
+95 percent confidence interval:
+ -0.7847452  0.8386737
+sample estimates:
+mean in group control    mean in group knee 
+           -0.3087500            -0.3357143 </code></pre>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="statistical-conclusion" class="slide level2">
 <h2>Statistical Conclusion</h2>
@@ -656,9 +714,17 @@
 <li class="fragment">We <strong>do not accept H<sub>0</sub></strong>, we only fail to reject</li>
 </ul>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="reporting-anovas" class="slide level2">
 <h2>Reporting ANOVAs</h2>
+</section>
+<section id="break-2" class="slide level2">
+<h2>BREAK</h2>
+<div>
+<ul>
+<li>two minute brain break!</li>
+</ul>
+</div>
 </section>
 <section id="part-xiii-how-was-f-distribution-built-from-anova-perspective" class="slide level2">
 <h2>Part XIII: How was F Distribution Built from ANOVA perspective?</h2>
@@ -669,14 +735,14 @@
 <section id="anova-r-output" class="slide level2">
 <h2>ANOVA R Output</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># use function `aov` to perform an anova</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># look at raw output </span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">print</span>(anova)</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># look at summary table</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="4,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># use function `aov` to perform an anova</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># look at raw output </span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">print</span>(anova)</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># look at summary table</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Output:</p>
 <div class="cell">
@@ -697,14 +763,14 @@ Estimated effects may be unbalanced</code></pre>
 <section id="anova-r-output-1" class="slide level2">
 <h2>ANOVA R Output</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># use function `aov` to perform an anova</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># look at raw output </span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">print</span>(anova)</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># look at summary table</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># use function `aov` to perform an anova</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># look at raw output </span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="fu">print</span>(anova)</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># look at summary table</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Output:</p>
 <div class="cell">
@@ -720,8 +786,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="part-xv-automatically-one-tailed-test-bc-f-is-squared" class="slide level2">
 <h2>Part XV: Automatically one-tailed test bc F is squared</h2>
 </section>
-<section id="part-xvi-statistical-hypothesis-testing---research-conclusion" class="slide level2">
-<h2>Part XVI: Statistical Hypothesis Testing -&gt; Research Conclusion</h2>
+<section id="statistical-hypothesis-testing---research-conclusion" class="slide level2">
+<h2>Statistical Hypothesis Testing -&gt; Research Conclusion</h2>
 </section>
 <section id="part-xvii-anova-assumptions" class="slide level2">
 <h2>Part XVII: ANOVA Assumptions</h2>

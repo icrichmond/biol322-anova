@@ -245,7 +245,7 @@ $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (
 
 - Penalization for within group variation is important because it makes **sampling error** very important
 
-$$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}$$
+$$F = \frac{s^2_{between}}{s^2_{within}} = \frac{\frac{\sum \limits _{i=1} ^{g}  (\bar X_{i}-\bar{\bar{X}})^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-\bar X_{i})^2}{(n-g)}}$$
 
 
 
@@ -290,12 +290,70 @@ summary(anova)
 
 ```
 
-## Part X: t2 = F for two groups 
-- make demonstration via code
-- or t = sqrt(F)
+## Comparison of Two Groups
+
+:::nonincremental
+- $t^2 = F$ when you are comparing two groups
+:::
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '8,9,10,11,12,13,14,15'
+#| 
+# read in data 
+df <- read.csv("/biol322/data/chap15e1KneesWhoSayNight.csv")
+View(df)
+
+# ensure that your group variable is coded as a factor
+df$treatment <- as.factor(df$treatment)
+
+# subset to 2 groups - control & knees
+df_s <- df[df$treatment == "control" | df$treatment == "knee", ]
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df_s)
+
+# use function `t.test` to perform a two sample t-test
+ttest <- t.test(shift ~ treatment, data = df_s)
+```
+
+
+
+## Comparison of Two Groups
+
+:::nonincremental
+- $t^2 = F$ 
+  - $0.073^2 = 0.005$
+:::
+
+::::{.columns}
+
+:::{.column}
+ANOVA: 
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+d$treatment <- as.factor(d$treatment)
+d_s <- d[d$treatment == "control" | d$treatment == "knee", ]
+a <- aov(shift ~ treatment, data = d_s)
+summary(a)
+```
+:::
+
+:::{.column}
+t-test: 
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+d$treatment <- as.factor(d$treatment)
+d_s <- d[d$treatment == "control" | d$treatment == "knee", ]
+t.test(shift ~ treatment, data = d_s)
+```
+
+:::
+
+::::
 
 
 ## Statistical Conclusion
+
 - We reject H~0~, the groups are significantly different from one another (statistically)
 - ANOVAs only tell us if there is a difference, this is the entire statistical conclusion
 - We **do not accept H~0~**, we only fail to reject
@@ -314,8 +372,17 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 
 
+## BREAK 
+
+:::nonincremental
+- two minute brain break! 
+::: 
+
+
+
 ## Part XIII: How was F Distribution Built from ANOVA perspective?
 - diagram
+
 
 
 ## ANOVA R Output
@@ -371,8 +438,14 @@ summary(a)
 ## Part XV: Automatically one-tailed test bc F is squared
 
 
-## Part XVI: Statistical Hypothesis Testing -> Research Conclusion
+
+
+## Statistical Hypothesis Testing -> Research Conclusion
+
+
 
 
 ## Part XVII: ANOVA Assumptions
+
+
 

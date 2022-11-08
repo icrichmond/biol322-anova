@@ -305,7 +305,7 @@
     "href": "index.html#f-statistic-2",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "F-Statistic",
-    "text": "F-Statistic\n\nPenalization for within group variation is important because it makes sampling error very important\n\n\\[F = \\frac{s^2~between~}{s^2~within~} = \\frac{\\frac{\\sum \\limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\\frac{\\sum \\limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\\]"
+    "text": "F-Statistic\n\nPenalization for within group variation is important because it makes sampling error very important\n\n\\[F = \\frac{s^2_{between}}{s^2_{within}} = \\frac{\\frac{\\sum \\limits _{i=1} ^{g}  (\\bar X_{i}-\\bar{\\bar{X}})^2}{(g-1)}}{\\frac{\\sum \\limits _{i=1} ^{g} (X-\\bar X_{i})^2}{(n-g)}}\\]"
   },
   {
     "objectID": "index.html#data-in-r",
@@ -348,5 +348,40 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "ANOVA R Output",
     "text": "ANOVA R Output\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at raw output \nprint(anova)\n\n# look at summary table\nsummary(anova)\n\nOutput:\n\n\n            Df Sum Sq Mean Sq F value  Pr(>F)   \ntreatment    2  7.224   3.612   7.289 0.00447 **\nResiduals   19  9.415   0.496                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "index.html#t2-f-for-two-groups",
+    "href": "index.html#t2-f-for-two-groups",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "t2 = F for two groups",
+    "text": "t2 = F for two groups\n\nt2 = F or F = sqrt(t) when you are comparing two groups"
+  },
+  {
+    "objectID": "index.html#break-2",
+    "href": "index.html#break-2",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "BREAK",
+    "text": "BREAK\n\n\ntwo minute brain break!"
+  },
+  {
+    "objectID": "index.html#statistical-hypothesis-testing---research-conclusion",
+    "href": "index.html#statistical-hypothesis-testing---research-conclusion",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Statistical Hypothesis Testing -> Research Conclusion",
+    "text": "Statistical Hypothesis Testing -> Research Conclusion"
+  },
+  {
+    "objectID": "index.html#comparison-of-two-groups",
+    "href": "index.html#comparison-of-two-groups",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Comparison of Two Groups",
+    "text": "Comparison of Two Groups\n\n\n\\(t^2 = F\\) when you are comparing two groups\n\n\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)\n\n# ensure that your group variable is coded as a factor\ndf$treatment <- as.factor(df$treatment)\n\n# subset to 2 groups - control & knees\ndf_s <- df[df$treatment == \"control\" | df$treatment == \"knee\", ]\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df_s)\n\n# use function `t.test` to perform a two sample t-test\nttest <- t.test(shift ~ treatment, data = df_s)"
+  },
+  {
+    "objectID": "index.html#comparison-of-two-groups-1",
+    "href": "index.html#comparison-of-two-groups-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Comparison of Two Groups",
+    "text": "Comparison of Two Groups\n\n\n\\(t^2 = F\\)\n\n\\(0.073^2 = 0.005\\)\n\n\n\n\n\nANOVA:\n\n\n            Df Sum Sq Mean Sq F value Pr(>F)\ntreatment    1  0.003  0.0027   0.005  0.942\nResiduals   13  6.422  0.4940               \n\n\n\nt-test:\n\n\n\n    Welch Two Sample t-test\n\ndata:  shift by treatment\nt = 0.072846, df = 11.343, p-value = 0.9432\nalternative hypothesis: true difference in means between group control and group knee is not equal to 0\n95 percent confidence interval:\n -0.7847452  0.8386737\nsample estimates:\nmean in group control    mean in group knee \n           -0.3087500            -0.3357143"
   }
 ]
