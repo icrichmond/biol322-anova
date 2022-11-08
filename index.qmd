@@ -478,8 +478,14 @@ summary(a)
   - We could do some post-hoc tests to determine where the differences are
 
 
+
 ## Part XVII: ANOVA Assumptions
 
+- Randomly sampled
+- Independent observations & groups
+- Standard deviation of each group is approximately the same
+- Each group has a large n (n > 20 is guide) or is ~ normal
+  - The more skewed the data, the higher the n required
 
 
 
