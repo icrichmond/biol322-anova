@@ -418,5 +418,236 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "ANOVA Assumptions",
     "text": "ANOVA Assumptions\n\nRandomly sampled\nIndependent observations & groups\nStandard deviation of each group is approximately the same\nEach group has a large n (n > 20 is guide) or is ~ normal\n\nThe more skewed the data, the higher the n required"
+  },
+  {
+    "objectID": "index-studentversion.html#learning-goals",
+    "href": "index-studentversion.html#learning-goals",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Learning Goals",
+    "text": "Learning Goals\n\nUnderstand what an ANOVA is\nUnderstand when/how to use an ANOVA\nUnderstand what a F-statistic is and where it comes from\nDifferentiate between statistical & research conclusions"
+  },
+  {
+    "objectID": "index-studentversion.html#when-do-i-use-an-anova",
+    "href": "index-studentversion.html#when-do-i-use-an-anova",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "When do I use an ANOVA?",
+    "text": "When do I use an ANOVA?\n\nYou have groups!\nWe are explaining  continuous  dependent variables using  categorical  independent variables\n\ni.e., if you want to know if there are differences between more than two  groups"
+  },
+  {
+    "objectID": "index-studentversion.html#what-is-an-anova",
+    "href": "index-studentversion.html#what-is-an-anova",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "What is an ANOVA?",
+    "text": "What is an ANOVA?\n\n\nOne-way = one  categorical  explanatory variable\nStatistical test used to compare variation across means of 2+  groups"
+  },
+  {
+    "objectID": "index-studentversion.html#history-of-anovas",
+    "href": "index-studentversion.html#history-of-anovas",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "History of ANOVAs",
+    "text": "History of ANOVAs\n\n\n\n\nInvented by Sir R.A. Fisher (“father of modern statistics”)\nUsed to prove differences between groups to support eugenics (among other things)\n\n\n\n\n\n\n\n\n\nWikipedia"
+  },
+  {
+    "objectID": "index-studentversion.html#example---knees-are-the-new-eyeballs",
+    "href": "index-studentversion.html#example---knees-are-the-new-eyeballs",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are the new eyeballs??",
+    "text": "Example - knees are the new eyeballs??\nBackground: photoreceptor cells influence our circadian rhythm based on how much light they receive & when\n\nMammals thought to only have these cells in our eyes\n\nDid experiment to test if these cells are present behind the knees (Campbell & Murphy, 1998)\n33 trials of 2 groups: control or experimental (knee)\nFound evidence light exposure to knees can change circadian rhythm! But…"
+  },
+  {
+    "objectID": "index-studentversion.html#example---knees-are-the-new-eyeballs-1",
+    "href": "index-studentversion.html#example---knees-are-the-new-eyeballs-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are the new eyeballs??",
+    "text": "Example - knees are the new eyeballs??\n\n\n\n\n\nFigure 1. Phase Delay\n\n\n\n\n\n\nFigure 2. Phase Advance"
+  },
+  {
+    "objectID": "index-studentversion.html#example---knees-are-not-the-new-eyeballs",
+    "href": "index-studentversion.html#example---knees-are-not-the-new-eyeballs",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are not the new eyeballs!",
+    "text": "Example - knees are not the new eyeballs!\n\nOne huge problem in the study highlighted in a rebuttal paper (Wright Jr. & Czeisler 2002)\nInitial study did not cover patients eyes during the experiment!\nNew study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)\nNo effect of light exposure to knees"
+  },
+  {
+    "objectID": "index-studentversion.html#example---knees-are-not-the-new-eyeballs-1",
+    "href": "index-studentversion.html#example---knees-are-not-the-new-eyeballs-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are not the new eyeballs!",
+    "text": "Example - knees are not the new eyeballs!"
+  },
+  {
+    "objectID": "index-studentversion.html#break",
+    "href": "index-studentversion.html#break",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "BREAK",
+    "text": "BREAK\n\n\n2 minute brain break!"
+  },
+  {
+    "objectID": "index-studentversion.html#statistical-hypothesis-testing",
+    "href": "index-studentversion.html#statistical-hypothesis-testing",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Statistical Hypothesis Testing",
+    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no statistical significance between the groups\nHA = there is a statistical significance between the groups\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (!= accept)\n\nStatistical significance != biological significance"
+  },
+  {
+    "objectID": "index-studentversion.html#one-way-anovas",
+    "href": "index-studentversion.html#one-way-anovas",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "One-Way ANOVAs",
+    "text": "One-Way ANOVAs\n\nOne-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic\nThe more different the groups are, the more likely we are to reject the null hypothesis and determine them as significantly different"
+  },
+  {
+    "objectID": "index-studentversion.html#the-sensitivity-of-the-f-statistic",
+    "href": "index-studentversion.html#the-sensitivity-of-the-f-statistic",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "The Sensitivity of the F-Statistic",
+    "text": "The Sensitivity of the F-Statistic\n\n\nThe F-statistic penalizes for variance within groups\n\nas variance within groups increases, F-statistic decreases even when the between group variance is the same"
+  },
+  {
+    "objectID": "index-studentversion.html#the-sensitivity-of-the-f-statistic-1",
+    "href": "index-studentversion.html#the-sensitivity-of-the-f-statistic-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "The Sensitivity of the F-Statistic",
+    "text": "The Sensitivity of the F-Statistic\n\n\nThese groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (between group variance) as the last slide\n\nthey just have more within group variance"
+  },
+  {
+    "objectID": "index-studentversion.html#analysis-of-variance-among-means",
+    "href": "index-studentversion.html#analysis-of-variance-among-means",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Analysis of Variance (AMONG MEANS)",
+    "text": "Analysis of Variance (AMONG MEANS)\n\n\nANOVAs are only variance among means, not variance in general\n\n\\[F = \\frac{s^2~between~}{s^2~within~} = \\frac{\\frac{\\sum \\limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\\frac{\\sum \\limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\\]"
+  },
+  {
+    "objectID": "index-studentversion.html#f-statistic",
+    "href": "index-studentversion.html#f-statistic",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic",
+    "text": "F-Statistic\n\n\nNumerator: between group variation from the global mean\nNeed to divide by number of groups (g) because as group number increases, sum of variation will increase\n\n\n\nLiguori & Moreira, 2018"
+  },
+  {
+    "objectID": "index-studentversion.html#f-statistic-1",
+    "href": "index-studentversion.html#f-statistic-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic",
+    "text": "F-Statistic\n\n\nDenominator: within group variation from the global mean\nAs within group variation increases, F-statistic gets smaller\n\npenalizes for within group variation\n\n\n\n\nLiguori & Moreira, 2018"
+  },
+  {
+    "objectID": "index-studentversion.html#f-statistic-2",
+    "href": "index-studentversion.html#f-statistic-2",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic",
+    "text": "F-Statistic\n\nPenalization for within group variation is important because it makes sampling error very important\n\n\\[F = \\frac{s^2_{between}}{s^2_{within}} = \\frac{\\frac{\\sum \\limits _{i=1} ^{g}  (\\bar X_{i}-\\bar{\\bar{X}})^2}{(g-1)}}{\\frac{\\sum \\limits _{i=1} ^{g} (X-\\bar X_{i})^2}{(n-g)}}\\]"
+  },
+  {
+    "objectID": "index-studentversion.html#break-1",
+    "href": "index-studentversion.html#break-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "BREAK",
+    "text": "BREAK\n\n\n2 min brain break"
+  },
+  {
+    "objectID": "index-studentversion.html#data-in-r",
+    "href": "index-studentversion.html#data-in-r",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Data in R",
+    "text": "Data in R\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)"
+  },
+  {
+    "objectID": "index-studentversion.html#anovas-in-r",
+    "href": "index-studentversion.html#anovas-in-r",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVAs in R",
+    "text": "ANOVAs in R\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)\n\n# ensure that your group variable is coded as a factor\ndf$treatment <- as.factor(df$treatment)\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at summary table\nsummary(anova)"
+  },
+  {
+    "objectID": "index-studentversion.html#comparison-of-two-groups",
+    "href": "index-studentversion.html#comparison-of-two-groups",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Comparison of Two Groups",
+    "text": "Comparison of Two Groups\n\n\n\\(t^2 = F\\) when you are comparing two groups\n\n\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)\n\n# ensure that your group variable is coded as a factor\ndf$treatment <- as.factor(df$treatment)\n\n# subset to 2 groups - control & knees\ndf_s <- df[df$treatment == \"control\" | df$treatment == \"knee\", ]\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df_s)\n\n# use function `t.test` to perform a two sample t-test\nttest <- t.test(shift ~ treatment, data = df_s)"
+  },
+  {
+    "objectID": "index-studentversion.html#comparison-of-two-groups-1",
+    "href": "index-studentversion.html#comparison-of-two-groups-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Comparison of Two Groups",
+    "text": "Comparison of Two Groups\n\n\nANOVA:\n\n\n            Df Sum Sq Mean Sq F value Pr(>F)\ntreatment    1  0.003  0.0027   0.005  0.942\nResiduals   13  6.422  0.4940               \n\n\n\nt-test:\n\n\n\n    Welch Two Sample t-test\n\ndata:  shift by treatment\nt = 0.072846, df = 11.343, p-value = 0.9432\nalternative hypothesis: true difference in means between group control and group knee is not equal to 0\n95 percent confidence interval:\n -0.7847452  0.8386737\nsample estimates:\nmean in group control    mean in group knee \n           -0.3087500            -0.3357143"
+  },
+  {
+    "objectID": "index-studentversion.html#statistical-conclusion",
+    "href": "index-studentversion.html#statistical-conclusion",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Statistical Conclusion",
+    "text": "Statistical Conclusion\n\nWe reject H0, the groups are significantly different from one another (statistically)\nANOVAs only tell us if there is a difference, this is the entire statistical conclusion\nWe do not accept H0, we only fail to reject"
+  },
+  {
+    "objectID": "index-studentversion.html#reporting-anovas",
+    "href": "index-studentversion.html#reporting-anovas",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Reporting ANOVAs",
+    "text": "Reporting ANOVAs\n\nWhen reporting ANOVAs we always use a clean and organized table to report the:\n\nsum of squares\ndegrees of freedom\nmean square\nF statistic\np-value"
+  },
+  {
+    "objectID": "index-studentversion.html#reporting-anovas-1",
+    "href": "index-studentversion.html#reporting-anovas-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Reporting ANOVAs",
+    "text": "Reporting ANOVAs\nTable 1. ANOVA summary table presenting results from aov, testing if mean changes in circadian rhythm are statistically different across treatment groups.\n\n\n\n\n\n\n  \n  \n    \n      \n      df\n      Sum of Squares\n      Mean Squares\n      F\n      p-value\n    \n  \n  \n    treatment\n2\n7.2\n3.6\n7.3\n0.0045\n    Residuals\n19\n9.4\n0.50\nNA\nNA"
+  },
+  {
+    "objectID": "index-studentversion.html#break-2",
+    "href": "index-studentversion.html#break-2",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "BREAK",
+    "text": "BREAK\n\n\ntwo minute brain break!"
+  },
+  {
+    "objectID": "index-studentversion.html#anova-r-output",
+    "href": "index-studentversion.html#anova-r-output",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVA R Output",
+    "text": "ANOVA R Output\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at raw output \nprint(anova)\n\n# look at summary table\nsummary(anova)\n\nOutput:\n\n\nCall:\n   aov(formula = shift ~ treatment, data = d)\n\nTerms:\n                treatment Residuals\nSum of Squares   7.224492  9.415345\nDeg. of Freedom         2        19\n\nResidual standard error: 0.7039492\nEstimated effects may be unbalanced"
+  },
+  {
+    "objectID": "index-studentversion.html#anova-r-output-1",
+    "href": "index-studentversion.html#anova-r-output-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVA R Output",
+    "text": "ANOVA R Output\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at raw output \nprint(anova)\n\n# look at summary table\nsummary(anova)\n\nOutput:\n\n\n            Df Sum Sq Mean Sq F value  Pr(>F)   \ntreatment    2  7.224   3.612   7.289 0.00447 **\nResiduals   19  9.415   0.496                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "index-studentversion.html#anovas-are-one-tailed-tests",
+    "href": "index-studentversion.html#anovas-are-one-tailed-tests",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVAs are one-tailed tests",
+    "text": "ANOVAs are one-tailed tests\n\n\nF is squared, so test is inherently one-tailed\nCannot have negative variation\n\n\n\n“The pdf of the F distribution” by IkamusumeFan is licensed under CC BY-SA 4.0"
+  },
+  {
+    "objectID": "index-studentversion.html#research-conclusion",
+    "href": "index-studentversion.html#research-conclusion",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Research Conclusion",
+    "text": "Research Conclusion\n\nStatistical conclusion = H0 is rejected, groups are statistically different\nResearch conclusion = there is a difference in the changes of circadian rhythm between control, knee, and eyes groups\n\nPreviously reported study may be wrong\nWe could do some post-hoc tests to determine where the differences are"
+  },
+  {
+    "objectID": "index-studentversion.html#anova-assumptions",
+    "href": "index-studentversion.html#anova-assumptions",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVA Assumptions",
+    "text": "ANOVA Assumptions\n\nRandomly sampled\nIndependent observations & groups\nStandard deviation of each group is approximately the same\nEach group has a large n (n > 20 is guide) or is ~ normal\n\nThe more skewed the data, the higher the n required"
+  },
+  {
+    "objectID": "index-studentversion.html#questions",
+    "href": "index-studentversion.html#questions",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Questions?",
+    "text": "Questions?\n\n\nThank you!!\nExtra videos on course bookdown"
+  },
+  {
+    "objectID": "index-studentversion.html#t2-f",
+    "href": "index-studentversion.html#t2-f",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "t2 = F",
+    "text": "t2 = F\n\n\nANOVA:\n\n\n            Df Sum Sq Mean Sq F value Pr(>F)\ntreatment    1  0.003  0.0027   0.005  0.942\nResiduals   13  6.422  0.4940               \n\n\n\nt-test:\n\n\n\n    Welch Two Sample t-test\n\ndata:  shift by treatment\nt = 0.072846, df = 11.343, p-value = 0.9432\nalternative hypothesis: true difference in means between group control and group knee is not equal to 0\n95 percent confidence interval:\n -0.7847452  0.8386737\nsample estimates:\nmean in group control    mean in group knee \n           -0.3087500            -0.3357143"
   }
 ]

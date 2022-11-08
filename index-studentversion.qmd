@@ -1,99 +1,616 @@
 ---
-title: "BIOL322 Lecture 17- Analysis of variance (ANOVA designs)"
-author: Isabella Richmond & Pedro Peres-Neto
+title: "Analysis of variance (ANOVA designs)"
+subtitle: "BIOL322 Lecture 17"
+author: Isabella Richmond & Dr. Pedro Peres-Neto
 date: November 10, 2022
 format: 
   revealjs:
     theme: night
+    incremental: true
 ---
-
-## Learning Goals 
-
 ## {background-image="presentation_imgs/notes.png"}
 
-## Part I: Types of Variables Used in an ANOVA
 
-## {background-image="presentation_imgs/notes.png"}
 
-## Part II: Pedro's Example for Context 
+## Learning Goals
 
-## {background-image="presentation_imgs/notes.png"}
+- *Understand* what an ANOVA is 
+- *Understand* when/how to use an ANOVA
+- *Understand* what a F-statistic is and where it comes from
+- *Differentiate* between statistical & research conclusions
 
-## Part III: Null & Alternative Hypothesis Testing 
-- statistical hypothesis testing**
-- quantitative approach and practical meaning
 
-## {background-image="presentation_imgs/notes.png"}
-
-## Part IV: Explain One-Way ANOVA
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part V: Demonstrate F-Statistic 
-- before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part VI: Variance AMONG MEANS 
-- ANOVAs are only variance among means, name is misleading 
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part VII: F-Statistic Workthrough 
-- why is penalization important
-- makes sampling error important
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part VIII: What des data look like in R?
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part IX: ANOVA code 
-- use aov not lm
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part X: t2 = F for two groups 
-- make demonstration via code
-- or t = sqrt(F)
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XI: Statistical Conclsion of Example
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XII: Reporting of ANOVA Tables
-
-** NO ACCEPTING HO** 
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XIII: How was F Distribution Built from ANOVA perspective?
-- diagram
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XIV: ANOVA R output
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XV: Automatically one-tailed test bc F is squared
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XVI: Statistical Hypothesis Testing -> Research Conclusion
-
-## {background-image="presentation_imgs/notes.png"}
-
-## Part XVII: ANOVA Assumptions
 
 ## {background-image="presentation_imgs/notes.png"}
 
 
-## NOTES: 
-1-2 min break every 20 min 
-75 min lecture 
-matching tutorial 
-lecture slides 1 day before - 1 slide/page and 3 slides/page
+
+## When do I use an ANOVA?
+
+- You have groups! 
+- We are explaining <w style = "color: #2c4b27"> *continuous* </w> dependent variables using <w style = "color: #574571"> **categorical** </w> independent variables 
+  - i.e., if you want to know if there are differences between more than two <w style = "color: #574571"> groups </w>
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## What is an ANOVA?
+
+:::nonincremental
+- One-way = **one**  <w style = "color: #574571"> categorical </w> explanatory variable 
+- Statistical test used to compare variation across means of 2+ <w style = "color: #574571"> groups </w>
+
+```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
+library(ggpubr)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
+  labs(y = "", x = "") + 
+  theme(legend.position = "none",
+        axis.text.x = element_blank())
+```
+
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## History of ANOVAs
+
+::: {layout-ncol=2}
+- Invented by Sir R.A. Fisher ("father of modern statistics")
+- Used to prove differences between groups to support eugenics (among other things)
+
+![](presentation_imgs/fisher.JPG)
+:::
+
+::: aside
+[Wikipedia](https://en.wikipedia.org/wiki/Ronald_Fisher)
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Example - knees are the new eyeballs??
+
+Background: photoreceptor cells influence our circadian rhythm based on how much light they receive & when
+
+- Mammals thought to only have these cells in our eyes  
+- Did experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
+- 33 trials of 2 groups: control or experimental (knee)
+- Found evidence light exposure to knees can change circadian rhythm! But...
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Example - knees are the new eyeballs??
+
+:::: {.columns}
+
+::: {.column}
+![Figure 1. Phase Delay](presentation_imgs/phasedelay.jpeg){width='50%'}
+:::
+
+::: {.column}
+![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg){width='50%'}
+:::
+::::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Example - knees are not the new eyeballs! 
+- One huge problem in the study highlighted in a rebuttal paper ([Wright Jr. & Czeisler 2002](https://www.science.org/doi/10.1126/science.1071697))
+- Initial study did not cover patients eyes during the experiment! 
+- New study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)
+- No effect of light exposure to knees
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Example - knees are not the new eyeballs! 
+
+```{r, echo = F, eval = T, fig.align='center'}
+library(ggpubr)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
+  labs(y = "Change in Melatonin Phase", x = "Treatment Group") + 
+  theme(legend.position='none')
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## BREAK 
+::: nonincremental
+- 2 minute brain break! 
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Statistical Hypothesis Testing
+
+Null hypothesis & alternative hypothesis framework:  
+
+- H~0~ = there is no *statistical* significance between the groups 
+- H~A~ = there is a *statistical* significance between the groups 
+- we either: 
+  a) reject the null hypothesis 
+  b) fail to reject the null hypothesis (**!= accept**)
+- Statistical significance != biological significance 
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## One-Way ANOVAs
+
+- One-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
+- The more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## The Sensitivity of the F-Statistic
+::: nonincremental
+- The F-statistic penalizes for variance **within groups**
+  - as variance **within groups** increases, F-statistic decreases even when the **between group** variance is the same
+
+```{r, echo = F, eval = T, fig.align='center', out.width='55%'}
+library(reshape2)
+library(ggplot2)
+dat1 <- read.table(text = "info mean sd
+group1 10 1
+group2 20 1
+", header = TRUE)
+
+densities <- apply(dat1[, -1], 1, function(x) rnorm(n = 1000, mean = x[1], sd = x[2]))
+
+colnames(densities) <- dat1$info
+
+#Put into long format
+densities.m <- melt(densities)
+
+#Plot
+ggplot(densities.m, aes(value, linetype = Var2)) + 
+  geom_density() +
+  theme_classic() + 
+  labs(x = "", y = "") + 
+  theme(legend.position = 'none')
+
+```
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## The Sensitivity of the F-Statistic
+
+:::nonincremental
+- These groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (**between group variance**) as the last slide
+  - they just have more **within group** variance
+  
+```{r, echo = F, eval = T, fig.align='center', out.width='45%'}
+library(reshape2)
+library(ggplot2)
+dat2 <- read.table(text = "info mean sd
+group1 10 5
+group2 20 5
+", header = TRUE)
+
+densities <- apply(dat2[, -1], 1, function(x) rnorm(n = 1000, mean = x[1], sd = x[2]))
+
+colnames(densities) <- dat2$info
+
+#Put into long format
+densities.m <- melt(densities)
+
+#Plot
+ggplot(densities.m, aes(value, linetype = Var2)) + 
+  geom_density() +
+  theme_classic() + 
+  labs(x = "", y = "") + 
+  theme(legend.position = 'none')
+
+```
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Analysis of Variance (AMONG MEANS)
+
+:::nonincremental
+- ANOVAs are only variance among **means**, not variance in general
+
+
+$$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}$$
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## F-Statistic
+
+:::nonincremental
+- Numerator: between group variation **from the global mean**
+- Need to divide by number of groups (g) because as group number increases, sum of variation will increase 
+:::
+
+![Liguori & Moreira, 2018](presentation_imgs/variation.png)
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## F-Statistic  
+
+:::nonincremental
+- Denominator: within group variation **from the global mean**
+- As within group variation increases, F-statistic gets smaller 
+  - penalizes for within group variation
+:::
+
+![Liguori & Moreira, 2018](presentation_imgs/variation.png)
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## F-Statistic 
+
+- Penalization for within group variation is important because it makes **sampling error** very important
+
+$$F = \frac{s^2_{between}}{s^2_{within}} = \frac{\frac{\sum \limits _{i=1} ^{g}  (\bar X_{i}-\bar{\bar{X}})^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-\bar X_{i})^2}{(n-g)}}$$
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## BREAK
+
+:::nonincremental 
+- 2 min brain break
+:::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Data in R
+
+```{r, echo = T, eval = F}
+# read in data 
+df <- read.csv("/biol322/data/chap15e1KneesWhoSayNight.csv")
+View(df)
+```
+
+
+![](presentation_imgs/r.png)
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## ANOVAs in R
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '5,6,7,8,9'
+
+# read in data 
+df <- read.csv("/biol322/data/chap15e1KneesWhoSayNight.csv")
+View(df)
+
+# ensure that your group variable is coded as a factor
+df$treatment <- as.factor(df$treatment)
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df)
+
+# look at summary table
+summary(anova)
+
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Comparison of Two Groups
+
+:::nonincremental
+- $t^2 = F$ when you are comparing two groups
+:::
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '8,9,10,11,12,13,14,15'
+#| 
+# read in data 
+df <- read.csv("/biol322/data/chap15e1KneesWhoSayNight.csv")
+View(df)
+
+# ensure that your group variable is coded as a factor
+df$treatment <- as.factor(df$treatment)
+
+# subset to 2 groups - control & knees
+df_s <- df[df$treatment == "control" | df$treatment == "knee", ]
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df_s)
+
+# use function `t.test` to perform a two sample t-test
+ttest <- t.test(shift ~ treatment, data = df_s)
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## t^2^ = F 
+
+::::{.columns}
+
+:::{.column}
+ANOVA: 
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+d$treatment <- as.factor(d$treatment)
+d_s <- d[d$treatment == "control" | d$treatment == "knee", ]
+a <- aov(shift ~ treatment, data = d_s)
+summary(a)
+```
+:::
+
+:::{.column}
+t-test: 
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+d$treatment <- as.factor(d$treatment)
+d_s <- d[d$treatment == "control" | d$treatment == "knee", ]
+t.test(shift ~ treatment, data = d_s)
+```
+
+:::
+
+::::
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Statistical Conclusion
+
+- We reject H~0~, the groups are significantly different from one another (statistically)
+- ANOVAs only tell us if there is a difference, this is the entire statistical conclusion
+- We **do not accept H~0~**, we only fail to reject
+
+```{r, echo = F, eval = T, fig.align='center'}
+library(ggpubr)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
+  labs(y = "Change in Melatonin Phase", x = "Treatment Group") + 
+  theme(legend.position='none')
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Reporting ANOVAs
+- When reporting ANOVAs we always use a clean and organized table to report the:
+  a) sum of squares
+  b) degrees of freedom 
+  c) mean square
+  d) F statistic
+  e) p-value
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Reporting ANOVAs
+
+
+Table 1. ANOVA summary table presenting results from `aov`, testing if mean changes in circadian rhythm are statistically different across treatment groups.
+```{r, echo = F, eval = T, out.width='50%'}
+library(broom)
+library(gt)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+d$treatment <- as.factor(d$treatment)
+a <- aov(shift ~ treatment, data = d)
+broom::tidy(a) %>% 
+  gt() %>%
+  fmt_number(columns = c(sumsq, meansq, statistic, p.value), n_sigfig = 2) %>%
+  cols_label(
+    term = "",
+    sumsq = "Sum of Squares",
+    meansq = "Mean Squares",
+    statistic = "F",
+    p.value = "p-value")
+  
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## BREAK 
+
+:::nonincremental
+- two minute brain break! 
+::: 
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## ANOVA R Output
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '4,5'
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df)
+
+# look at raw output 
+print(anova)
+
+# look at summary table
+summary(anova)
+
+```
+
+Output:
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+a <- aov(shift~treatment, d)
+print(a)
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## ANOVA R Output
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '7,8'
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df)
+
+# look at raw output 
+print(anova)
+
+# look at summary table
+summary(anova)
+
+```
+
+Output: 
+```{r, echo = F, eval = T}
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+a <- aov(shift~treatment, d)
+summary(a)
+```
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## ANOVAs are one-tailed tests
+
+:::nonincremental
+- F is squared, so test is inherently one-tailed 
+- Cannot have negative variation
+:::
+
+!["The pdf of the F distribution" by IkamusumeFan is licensed under CC BY-SA 4.0](presentation_imgs/fdist.png)
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Research Conclusion
+
+- Statistical conclusion = H~0~ is rejected, groups are statistically different 
+- **Research conclusion** = there is a difference in the changes of circadian rhythm between control, knee, and eyes groups 
+  - Previously reported study may be wrong 
+  - We could do some post-hoc tests to determine where the differences are
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## ANOVA Assumptions
+
+- Randomly sampled
+- Independent observations & groups
+- Standard deviation of each group is approximately the same
+- Each group has a large n (n > 20 is guide) or is ~ normal
+  - The more skewed the data, the higher the n required
+
+
+
+## {background-image="presentation_imgs/notes.png"}
+
+
+
+## Questions?
+
+:::nonincremental
+- Thank you!! 
+- Extra videos on course bookdown
+:::
+
+
+## {background-image="presentation_imgs/notes.png"}
