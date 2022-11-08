@@ -66,10 +66,10 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 Background: photoreceptor cells influence our circadian rhythm based on how much light they receive & when
 
-- mammals thought to only have these cells in our eyeballs   
-- did experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
+- Mammals thought to only have these cells in our eyeballs   
+- Did experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
 - 33 trials of 2 groups: control or experimental (knee)
-- found evidence light exposure to knees can change circadian rhythm! But...
+- Found evidence light exposure to knees can change circadian rhythm! But...
 
 
 
@@ -89,11 +89,11 @@ Background: photoreceptor cells influence our circadian rhythm based on how much
 
 
 ## Example - knees are not the new eyeballs! 
-- one huge problem in the study highlighted in a rebuttal paper ([Wright Jr. & Czeisler 2002](https://www.science.org/doi/10.1126/science.1071697))
-- initial study did not cover patients eyes during the experiment! 
-- new study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)
-- no effect of light exposure to knees
-- perfect case for an ANOVA! 
+- One huge problem in the study highlighted in a rebuttal paper ([Wright Jr. & Czeisler 2002](https://www.science.org/doi/10.1126/science.1071697))
+- Initial study did not cover patients eyes during the experiment! 
+- New study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)
+- No effect of light exposure to knees
+- Perfect case for an ANOVA! 
 
 
 
@@ -125,14 +125,14 @@ Null hypothesis & alternative hypothesis framework:
 - we either: 
   a) reject the null hypothesis 
   b) fail to reject the null hypothesis (**!= accept**)
-- statistical significance != biological significance 
+- Statistical significance != biological significance 
 
 
 
 ## One-Way ANOVAs
 
-- one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
-- the more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
+- One-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
+- The more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
 
 ```{r, echo = F, eval = T}
 
@@ -178,7 +178,7 @@ ggplot(densities.m, aes(value, linetype = Var2)) +
 ## The Sensitivity of the F-Statistic
 
 :::nonincremental
-- these groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (**between group variance**) as the last slide
+- These groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (**between group variance**) as the last slide
   - they just have more **within group** variance
   
 ```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
@@ -223,7 +223,7 @@ $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (
 
 :::nonincremental
 - Numerator: between group variation **from the global mean**
-- need to divide by number of groups (g) because as group number increases, sum of variation will increase 
+- Need to divide by number of groups (g) because as group number increases, sum of variation will increase 
 :::
 
 ![Liguori & Moreira, 2018](presentation_imgs/variation.png)
@@ -234,7 +234,7 @@ $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (
 :::nonincremental
 - Denominator: within group variation **from the global mean**
 - As within group variation increases, F-statistic gets smaller 
-  - Penalizes for within group variation
+  - penalizes for within group variation
 :::
 
 ![Liguori & Moreira, 2018](presentation_imgs/variation.png)
@@ -466,9 +466,12 @@ summary(a)
 
 ## ANOVAs are one-tailed tests
 
+:::nonincremental
+- F is squared, so test is inherently one-tailed 
+- Cannot have negative variation
+:::
 
-
-
+!["The pdf of the F distribution" by IkamusumeFan is licensed under CC BY-SA 4.0](presentation_imgs/fdist.png)
 
 ## Research Conclusion
 
@@ -479,7 +482,7 @@ summary(a)
 
 
 
-## Part XVII: ANOVA Assumptions
+## ANOVA Assumptions
 
 - Randomly sampled
 - Independent observations & groups

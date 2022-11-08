@@ -388,8 +388,8 @@
     "objectID": "index.html#questions",
     "href": "index.html#questions",
     "title": "Analysis of variance (ANOVA designs)",
-    "section": "Questions!",
-    "text": "Questions!\n\n\nExtra videos on course bookdown"
+    "section": "Questions?",
+    "text": "Questions?\n\n\nThank you!!\nExtra videos on course bookdown"
   },
   {
     "objectID": "index.html#reporting-anovas-1",
@@ -397,5 +397,26 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Reporting ANOVAs",
     "text": "Reporting ANOVAs\nTable 1. ANOVA summary table presenting results from aov, testing if mean changes in circadian rhythm are statistically different across treatment groups.\n\n\n\n\n\n\n  \n  \n    \n      \n      df\n      Sum of Squares\n      Mean Squares\n      F\n      p-value\n    \n  \n  \n    treatment\n2\n7.2\n3.6\n7.3\n0.0045\n    Residuals\n19\n9.4\n0.50\nNA\nNA"
+  },
+  {
+    "objectID": "index.html#anovas-are-one-tailed-tests",
+    "href": "index.html#anovas-are-one-tailed-tests",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVAs are one-tailed tests",
+    "text": "ANOVAs are one-tailed tests\n\n\nF is squared, so test is inherently one-tailed\nCannot have negative variation\n\n\n\n“The pdf of the F distribution” by IkamusumeFan is licensed under CC BY-SA 4.0"
+  },
+  {
+    "objectID": "index.html#research-conclusion",
+    "href": "index.html#research-conclusion",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Research Conclusion",
+    "text": "Research Conclusion\n\nStatistical conclusion = H0 is rejected, groups are statistically different\nResearch conclusion = there is a difference in the changes of circadian rhythm between control, knee, and eyes groups\n\nPreviously reported study may be wrong\nWe could do some post-hoc tests to determine where the differences are"
+  },
+  {
+    "objectID": "index.html#anova-assumptions",
+    "href": "index.html#anova-assumptions",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVA Assumptions",
+    "text": "ANOVA Assumptions\n\nRandomly sampled\nIndependent observations & groups\nStandard deviation of each group is approximately the same\nEach group has a large n (n > 20 is guide) or is ~ normal\n\nThe more skewed the data, the higher the n required"
   }
 ]
