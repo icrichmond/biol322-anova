@@ -369,7 +369,36 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 
 ## Reporting ANOVAs
+- When reporting ANOVAs we always use a clean and organized table to report the:
+  a) sum of squares
+  b) degrees of freedom 
+  c) mean square
+  d) F statistic
+  e) p-value
 
+
+
+## Reporting ANOVAs
+
+
+Table 1. ANOVA summary table presenting results from `aov`, testing if mean changes in circadian rhythm are statistically different across treatment groups.
+```{r, echo = F, eval = T, out.width='50%'}
+library(broom)
+library(gt)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+d$treatment <- as.factor(d$treatment)
+a <- aov(shift ~ treatment, data = d)
+broom::tidy(a) %>% 
+  gt() %>%
+  fmt_number(columns = c(sumsq, meansq, statistic, p.value), n_sigfig = 2) %>%
+  cols_label(
+    term = "",
+    sumsq = "Sum of Squares",
+    meansq = "Mean Squares",
+    statistic = "F",
+    p.value = "p-value")
+  
+```
 
 
 ## BREAK 
@@ -449,3 +478,9 @@ summary(a)
 
 
 
+
+## Questions!
+
+:::nonincremental
+- Extra videos on course bookdown
+:::

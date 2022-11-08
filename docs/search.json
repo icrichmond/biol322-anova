@@ -333,7 +333,7 @@
     "href": "index.html#reporting-anovas",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Reporting ANOVAs",
-    "text": "Reporting ANOVAs"
+    "text": "Reporting ANOVAs\n\nWhen reporting ANOVAs we always use a clean and organized table to report the:\n\nsum of squares\ndegrees of freedom\nmean square\nF statistic\np-value"
   },
   {
     "objectID": "index.html#anova-r-output",
@@ -383,5 +383,19 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Comparison of Two Groups",
     "text": "Comparison of Two Groups\n\n\n\\(t^2 = F\\)\n\n\\(0.073^2 = 0.005\\)\n\n\n\n\n\nANOVA:\n\n\n            Df Sum Sq Mean Sq F value Pr(>F)\ntreatment    1  0.003  0.0027   0.005  0.942\nResiduals   13  6.422  0.4940               \n\n\n\nt-test:\n\n\n\n    Welch Two Sample t-test\n\ndata:  shift by treatment\nt = 0.072846, df = 11.343, p-value = 0.9432\nalternative hypothesis: true difference in means between group control and group knee is not equal to 0\n95 percent confidence interval:\n -0.7847452  0.8386737\nsample estimates:\nmean in group control    mean in group knee \n           -0.3087500            -0.3357143"
+  },
+  {
+    "objectID": "index.html#questions",
+    "href": "index.html#questions",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Questions!",
+    "text": "Questions!\n\n\nExtra videos on course bookdown"
+  },
+  {
+    "objectID": "index.html#reporting-anovas-1",
+    "href": "index.html#reporting-anovas-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Reporting ANOVAs",
+    "text": "Reporting ANOVAs\nTable 1. ANOVA summary table presenting results from aov, testing if mean changes in circadian rhythm are statistically different across treatment groups.\n\n\n\n\n\n\n  \n  \n    \n      \n      df\n      Sum of Squares\n      Mean Squares\n      F\n      p-value\n    \n  \n  \n    treatment\n2\n7.2\n3.6\n7.3\n0.0045\n    Residuals\n19\n9.4\n0.50\nNA\nNA"
   }
 ]
