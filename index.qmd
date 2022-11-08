@@ -33,14 +33,13 @@ format:
 - One-way = **one**  <w style = "color: #574571"> categorical </w> explanatory variable 
 - Statistical test used to compare variation across means of 2+ <w style = "color: #574571"> groups </w>
 
-```{r, echo = F, eval = T, fig.align='center'}
+```{r, echo = F, eval = T, fig.align='center', out.width='70%'}
 library(ggpubr)
 d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
 ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
   labs(y = "", x = "") + 
   theme(legend.position = "none",
         axis.text.x = element_blank())
-
 ```
 
 :::
@@ -64,11 +63,12 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 ## Example - knees are the new eyeballs??
 
-Background: photoreceptor cells influence our circadian rhythm
-- traditionally thought that mammals only have these kinds of cells in our eyeballs 
-- created an experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
-- 
+Background: photoreceptor cells influence our circadian rhythm based on how much light they receive & when
 
+- mammals thought to only have these cells in our eyeballs   
+- did experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
+- 33 trials of 2 groups: control or experimental (knee)
+- found evidence light exposure to knees can change circadian rhythm! But...
 
 
 ## Example - knees are the new eyeballs??
@@ -76,13 +76,32 @@ Background: photoreceptor cells influence our circadian rhythm
 :::: {.columns}
 
 ::: {.column}
-![Figure 1. Phase Delay](presentation_imgs/phasedelay.jpeg)
+![Figure 1. Phase Delay](presentation_imgs/phasedelay.jpeg){width='60%'}
 :::
 
 ::: {.column}
-![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg)
+![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg){width='60%'}
 :::
 ::::
+
+## Example - knees are not the new eyeballs! 
+- one huge problem in the study highlighted in a rebuttal paper ([Wright Jr. & Czeisler 2002](https://www.science.org/doi/10.1126/science.1071697))
+- initial study did not cover patients eyes during the experiment! 
+- new study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)
+- no effect of light exposure to knees
+- perfect case for an ANOVA! 
+
+
+
+## Example - knees are not the new eyeballs! 
+
+```{r, echo = F, eval = T, fig.align='center'}
+library(ggpubr)
+d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
+ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
+  labs(y = "Change in Melatonin Phase", x = "Treatment Group") + 
+  theme(legend.position='none')
+```
 
 
 ## Part III: Null & Alternative Hypothesis Testing 

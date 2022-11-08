@@ -172,7 +172,7 @@
     "href": "index.html#example---knees-are-the-new-eyeballs",
     "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
     "section": "Example - knees are the new eyeballs??",
-    "text": "Example - knees are the new eyeballs??\nBackground:"
+    "text": "Example - knees are the new eyeballs??\nBackground: photoreceptor cells influence our circadian rhythm based on how much light they receive & when\n\nmammals thought to only have these cells in our eyeballs\n\ndid experiment to test if these cells are present behind the knees (Campbell & Murphy, 1998)\n33 trials of 2 groups: control or experimental (knee)\nfound evidence light exposure to knees can change circadian rhythm! But…"
   },
   {
     "objectID": "index.html#example---knees-are-the-new-eyeballs-1",
@@ -187,5 +187,19 @@
     "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
     "section": "Example - knees are the new eyeballs??",
     "text": "Example - knees are the new eyeballs??\n\nFigure 2"
+  },
+  {
+    "objectID": "index.html#example---knees-are-not-the-new-eyeballs",
+    "href": "index.html#example---knees-are-not-the-new-eyeballs",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are not the new eyeballs!",
+    "text": "Example - knees are not the new eyeballs!\n\none huge problem in the study highlighted in a rebuttal paper (Wright Jr. & Czeisler 2002)\ninitial study did not cover patients eyes during the experiment!\nnew study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)\nno effect of light exposure to knees\nperfect case for an ANOVA!"
+  },
+  {
+    "objectID": "index.html#example---knees-are-not-the-new-eyeballs-1",
+    "href": "index.html#example---knees-are-not-the-new-eyeballs-1",
+    "title": "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)",
+    "section": "Example - knees are not the new eyeballs!",
+    "text": "Example - knees are not the new eyeballs!"
   }
 ]

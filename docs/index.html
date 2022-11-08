@@ -7,11 +7,11 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.237">
+  <meta name="generator" content="quarto-1.1.251">
 
   <meta name="author" content="Isabella Richmond &amp; Pedro Peres-Neto">
   <meta name="dcterms.date" content="2022-11-10">
-  <title>biol322-anova - BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</title>
+  <title>BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -324,19 +324,12 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" class="center">
   <h1 class="title">BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</h1>
-
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Isabella Richmond &amp; Pedro Peres-Neto 
-</div>
-</div>
-</div>
-
-  <p class="date">11/10/22</p>
+  <p class="author">Isabella Richmond &amp; Pedro Peres-Neto</p>
+  <p class="date">November 10, 2022</p>
 </section>
+
 <section id="learning-goals" class="slide level2">
 <h2>Learning Goals</h2>
 <ul>
@@ -367,7 +360,7 @@ Isabella Richmond &amp; Pedro Peres-Neto
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -395,7 +388,14 @@ Isabella Richmond &amp; Pedro Peres-Neto
 </div></aside></section>
 <section id="example---knees-are-the-new-eyeballs" class="slide level2">
 <h2>Example - knees are the new eyeballs??</h2>
-<p>Background:</p>
+<p>Background: photoreceptor cells influence our circadian rhythm based on how much light they receive &amp; when</p>
+<ul>
+<li class="fragment">mammals thought to only have these cells in our eyeballs<br>
+</li>
+<li class="fragment">did experiment to test if these cells are present behind the knees (<a href="https://www.science.org/doi/10.1126/science.279.5349.396">Campbell &amp; Murphy, 1998</a>)</li>
+<li class="fragment">33 trials of 2 groups: control or experimental (knee)</li>
+<li class="fragment">found evidence light exposure to knees can change circadian rhythm! But…</li>
+</ul>
 </section>
 <section id="example---knees-are-the-new-eyeballs-1" class="slide level2">
 <h2>Example - knees are the new eyeballs??</h2>
@@ -403,20 +403,34 @@ Isabella Richmond &amp; Pedro Peres-Neto
 <div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="presentation_imgs/phasedelay.jpeg"></p>
+<p><img data-src="presentation_imgs/phasedelay.jpeg" style="width:60.0%"></p>
 <p></p><figcaption>Figure 1. Phase Delay</figcaption><p></p>
 </figure>
 </div>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="presentation_imgs/phaseadvance.jpeg"></p>
+<p><img data-src="presentation_imgs/phaseadvance.jpeg" style="width:60.0%"></p>
 <p></p><figcaption>Figure 2. Phase Advance</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
+<section id="example---knees-are-not-the-new-eyeballs" class="slide level2">
+<h2>Example - knees are not the new eyeballs!</h2>
+<ul>
+<li class="fragment">one huge problem in the study highlighted in a rebuttal paper (<a href="https://www.science.org/doi/10.1126/science.1071697">Wright Jr.&nbsp;&amp; Czeisler 2002</a>)</li>
+<li class="fragment">initial study did not cover patients eyes during the experiment!</li>
+<li class="fragment">new study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)</li>
+<li class="fragment">no effect of light exposure to knees</li>
+<li class="fragment">perfect case for an ANOVA!</li>
+</ul>
+</section>
+<section id="example---knees-are-not-the-new-eyeballs-1" class="slide level2">
+<h2>Example - knees are not the new eyeballs!</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="part-iii-null-alternative-hypothesis-testing" class="slide level2">
 <h2>Part III: Null &amp; Alternative Hypothesis Testing</h2>
 <ul>
@@ -709,15 +723,12 @@ Isabella Richmond &amp; Pedro Peres-Neto
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -728,6 +739,13 @@ Isabella Richmond &amp; Pedro Peres-Neto
               window.jQuery(currentSlide).trigger("shown");
             }
           }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
         }
 
         // hookup for slidy
@@ -779,24 +797,7 @@ Isabella Richmond &amp; Pedro Peres-Neto
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
         setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -834,42 +835,24 @@ Isabella Richmond &amp; Pedro Peres-Neto
           return note.innerHTML;
         });
       }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
           });
-        }
+          return popup.innerHTML;
+        });
       }
     });
     </script>
