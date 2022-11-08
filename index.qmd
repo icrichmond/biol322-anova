@@ -217,9 +217,36 @@ ggplot(densities.m, aes(value, linetype = Var2)) +
 $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}$$
 :::
 
-## Part VII: F-Statistic Workthrough 
-- why is penalization important
-- makes sampling error important
+
+
+## F-Statistic
+
+:::nonincremental
+- Numerator: between group variation **from the global mean**
+- need to divide by number of groups (g) because as group number increases, sum of variation will increase 
+:::
+
+![Liguori & Moreira, 2018](presentation_imgs/variation.png)
+
+
+## F-Statistic  
+
+:::nonincremental
+- Denominator: within group variation **from the global mean**
+- As within group variation increases, F-statistic gets smaller 
+  - Penalizes for within group variation
+:::
+
+![Liguori & Moreira, 2018](presentation_imgs/variation.png)
+
+
+
+## F-Statistic 
+
+
+$$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}$$
+
+- Penalization for within group variation is important because it makes **sampling error** very important
 
 
 

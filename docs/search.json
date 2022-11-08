@@ -264,5 +264,26 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Part XI: Statistical Conclusion of Example",
     "text": "Part XI: Statistical Conclusion of Example"
+  },
+  {
+    "objectID": "index.html#f-statistic-workthrough",
+    "href": "index.html#f-statistic-workthrough",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic Workthrough",
+    "text": "F-Statistic Workthrough\n\n\nNumerator: between group variation from the global mean\nneed to divide by number of groups (g) because as group number increases, sum of variation will increase\n\n\n\nLiguori & Moreira, 2018"
+  },
+  {
+    "objectID": "index.html#f-statistic-workthrough-1",
+    "href": "index.html#f-statistic-workthrough-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic Workthrough",
+    "text": "F-Statistic Workthrough\n\nDenominator: within group variation from the global mean\nAs within group variation increases, F-statistic gets smaller\n\nPenalizes for within group variation\n\n\n\nLiguori & Moreira, 2018"
+  },
+  {
+    "objectID": "index.html#f-statistic-workthrough-2",
+    "href": "index.html#f-statistic-workthrough-2",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic Workthrough",
+    "text": "F-Statistic Workthrough\n\nwhy is penalization important\nmakes sampling error important"
   }
 ]
