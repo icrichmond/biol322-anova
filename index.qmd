@@ -243,10 +243,9 @@ $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (
 
 ## F-Statistic 
 
+- Penalization for within group variation is important because it makes **sampling error** very important
 
 $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}$$
-
-- Penalization for within group variation is important because it makes **sampling error** very important
 
 
 
@@ -258,12 +257,38 @@ $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (
 
 
 
-## Part VIII: What des data look like in R?
+## Data in R
+
+```{r, echo = T, eval = F}
+# read in data 
+df <- read.csv("/biol322/data/chap15e1KneesWhoSayNight.csv")
+View(df)
+```
 
 
-## Part IX: ANOVA code 
-- use aov not lm
+![](presentation_imgs/r.png)
 
+
+
+## ANOVAs in R
+
+```{r, echo = T, eval = F}
+#| code-line-numbers: '5,6,7,8,9'
+
+# read in data 
+df <- read.csv("/biol322/data/chap15e1KneesWhoSayNight.csv")
+View(df)
+
+# ensure that your group variable is coded as a factor
+df$treatment <- as.factor(df$treatment)
+
+# use function `aov` to perform an anova
+anova <- aov(shift ~ treatment, data = df)
+
+# look at summary table
+summary(anova)
+
+```
 
 ## Part X: t2 = F for two groups 
 - make demonstration via code

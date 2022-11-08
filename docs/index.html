@@ -29,6 +29,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -513,8 +577,8 @@
 <p><span class="math display">\[F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\]</span></p>
 </div>
 </section>
-<section id="f-statistic-workthrough" class="slide level2">
-<h2>F-Statistic Workthrough</h2>
+<section id="f-statistic" class="slide level2">
+<h2>F-Statistic</h2>
 <div>
 <ul>
 <li>Numerator: between group variation <strong>from the global mean</strong></li>
@@ -523,23 +587,25 @@
 </div>
 
 <img data-src="presentation_imgs/variation.png" class="r-stretch quarto-figure-center"><p class="caption">Liguori &amp; Moreira, 2018</p></section>
-<section id="f-statistic-workthrough-1" class="slide level2">
-<h2>F-Statistic Workthrough</h2>
+<section id="f-statistic-1" class="slide level2">
+<h2>F-Statistic</h2>
+<div>
 <ul>
-<li class="fragment">Denominator: within group variation <strong>from the global mean</strong></li>
-<li class="fragment">As within group variation increases, F-statistic gets smaller
+<li>Denominator: within group variation <strong>from the global mean</strong></li>
+<li>As within group variation increases, F-statistic gets smaller
 <ul>
-<li class="fragment">Penalizes for within group variation</li>
+<li>Penalizes for within group variation</li>
 </ul></li>
 </ul>
+</div>
 
 <img data-src="presentation_imgs/variation.png" class="r-stretch quarto-figure-center"><p class="caption">Liguori &amp; Moreira, 2018</p></section>
-<section id="f-statistic-workthrough-2" class="slide level2">
-<h2>F-Statistic Workthrough</h2>
+<section id="f-statistic-2" class="slide level2">
+<h2>F-Statistic</h2>
 <ul>
-<li class="fragment">why is penalization important</li>
-<li class="fragment">makes sampling error important</li>
+<li class="fragment">Penalization for within group variation is important because it makes <strong>sampling error</strong> very important</li>
 </ul>
+<p><span class="math display">\[F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\]</span></p>
 </section>
 <section id="break-1" class="slide level2">
 <h2>BREAK</h2>
@@ -549,14 +615,31 @@
 </ul>
 </div>
 </section>
-<section id="part-viii-what-des-data-look-like-in-r" class="slide level2">
-<h2>Part VIII: What des data look like in R?</h2>
-</section>
-<section id="part-ix-anova-code" class="slide level2">
-<h2>Part IX: ANOVA code</h2>
-<ul>
-<li class="fragment">use aov not lm</li>
-</ul>
+<section id="data-in-r" class="slide level2">
+<h2>Data in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># read in data </span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/biol322/data/chap15e1KneesWhoSayNight.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">View</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="presentation_imgs/r.png" class="r-stretch"></section>
+<section id="anovas-in-r" class="slide level2">
+<h2>ANOVAs in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="5,6,7,8,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># read in data </span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/biol322/data/chap15e1KneesWhoSayNight.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">View</span>(df)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># ensure that your group variable is coded as a factor</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>df<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df<span class="sc">$</span>treatment)</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># use function `aov` to perform an anova</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co"># look at summary table</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="part-x-t2-f-for-two-groups" class="slide level2">
 <h2>Part X: t2 = F for two groups</h2>

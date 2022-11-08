@@ -285,5 +285,40 @@
     "title": "Analysis of variance (ANOVA designs)",
     "section": "F-Statistic Workthrough",
     "text": "F-Statistic Workthrough\n\nwhy is penalization important\nmakes sampling error important"
+  },
+  {
+    "objectID": "index.html#f-statistic",
+    "href": "index.html#f-statistic",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic",
+    "text": "F-Statistic\n\n\nNumerator: between group variation from the global mean\nneed to divide by number of groups (g) because as group number increases, sum of variation will increase\n\n\n\nLiguori & Moreira, 2018"
+  },
+  {
+    "objectID": "index.html#f-statistic-1",
+    "href": "index.html#f-statistic-1",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic",
+    "text": "F-Statistic\n\n\nDenominator: within group variation from the global mean\nAs within group variation increases, F-statistic gets smaller\n\nPenalizes for within group variation\n\n\n\n\nLiguori & Moreira, 2018"
+  },
+  {
+    "objectID": "index.html#f-statistic-2",
+    "href": "index.html#f-statistic-2",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "F-Statistic",
+    "text": "F-Statistic\n\nPenalization for within group variation is important because it makes sampling error very important\n\n\\[F = \\frac{s^2~between~}{s^2~within~} = \\frac{\\frac{\\sum \\limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\\frac{\\sum \\limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\\]"
+  },
+  {
+    "objectID": "index.html#data-in-r",
+    "href": "index.html#data-in-r",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "Data in R",
+    "text": "Data in R\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)"
+  },
+  {
+    "objectID": "index.html#anovas-in-r",
+    "href": "index.html#anovas-in-r",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "ANOVAs in R",
+    "text": "ANOVAs in R\n\n# read in data \ndf <- read.csv(\"/biol322/data/chap15e1KneesWhoSayNight.csv\")\nView(df)\n\n# ensure that your group variable is coded as a factor\ndf$treatment <- as.factor(df$treatment)\n\n# use function `aov` to perform an anova\nanova <- aov(shift ~ treatment, data = df)\n\n# look at summary table\nsummary(anova)"
   }
 ]
