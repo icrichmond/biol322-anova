@@ -165,14 +165,14 @@
     "href": "index.html#one-way-anovas",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "One-Way ANOVAs",
-    "text": "One-Way ANOVAs\n\none-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic\nthe more different the groups are, the more likely we are to reject the null hypothesis and determine them as significantly different"
+    "text": "One-Way ANOVAs\n\nOne-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic\nThe more different the groups are, the more likely we are to reject the null hypothesis and determine them as significantly different"
   },
   {
     "objectID": "index.html#example---knees-are-the-new-eyeballs",
     "href": "index.html#example---knees-are-the-new-eyeballs",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Example - knees are the new eyeballs??",
-    "text": "Example - knees are the new eyeballs??\nBackground: photoreceptor cells influence our circadian rhythm based on how much light they receive & when\n\nmammals thought to only have these cells in our eyeballs\n\ndid experiment to test if these cells are present behind the knees (Campbell & Murphy, 1998)\n33 trials of 2 groups: control or experimental (knee)\nfound evidence light exposure to knees can change circadian rhythm! But…"
+    "text": "Example - knees are the new eyeballs??\nBackground: photoreceptor cells influence our circadian rhythm based on how much light they receive & when\n\nMammals thought to only have these cells in our eyeballs\n\nDid experiment to test if these cells are present behind the knees (Campbell & Murphy, 1998)\n33 trials of 2 groups: control or experimental (knee)\nFound evidence light exposure to knees can change circadian rhythm! But…"
   },
   {
     "objectID": "index.html#example---knees-are-the-new-eyeballs-1",
@@ -193,7 +193,7 @@
     "href": "index.html#example---knees-are-not-the-new-eyeballs",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Example - knees are not the new eyeballs!",
-    "text": "Example - knees are not the new eyeballs!\n\none huge problem in the study highlighted in a rebuttal paper (Wright Jr. & Czeisler 2002)\ninitial study did not cover patients eyes during the experiment!\nnew study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)\nno effect of light exposure to knees\nperfect case for an ANOVA!"
+    "text": "Example - knees are not the new eyeballs!\n\nOne huge problem in the study highlighted in a rebuttal paper (Wright Jr. & Czeisler 2002)\nInitial study did not cover patients eyes during the experiment!\nNew study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)\nNo effect of light exposure to knees\nPerfect case for an ANOVA!"
   },
   {
     "objectID": "index.html#example---knees-are-not-the-new-eyeballs-1",
@@ -221,7 +221,7 @@
     "href": "index.html#statistical-hypothesis-testing",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Statistical Hypothesis Testing",
-    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no statistical significance between the groups\nHA = there is a statistical significance between the groups\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (!= accept)\n\nstatistical significance != biological significance"
+    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no statistical significance between the groups\nHA = there is a statistical significance between the groups\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (!= accept)\n\nStatistical significance != biological significance"
   },
   {
     "objectID": "index.html#the-sensitivity-of-the-f-statistic",
@@ -235,7 +235,7 @@
     "href": "index.html#the-sensitivity-of-the-f-statistic-1",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "The Sensitivity of the F-Statistic",
-    "text": "The Sensitivity of the F-Statistic\n\n\nthese groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (between group variance) as the last slide\n\nthey just have more within group variance"
+    "text": "The Sensitivity of the F-Statistic\n\n\nThese groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (between group variance) as the last slide\n\nthey just have more within group variance"
   },
   {
     "objectID": "index.html#what-is-an-anova",
@@ -291,14 +291,14 @@
     "href": "index.html#f-statistic",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "F-Statistic",
-    "text": "F-Statistic\n\n\nNumerator: between group variation from the global mean\nneed to divide by number of groups (g) because as group number increases, sum of variation will increase\n\n\n\nLiguori & Moreira, 2018"
+    "text": "F-Statistic\n\n\nNumerator: between group variation from the global mean\nNeed to divide by number of groups (g) because as group number increases, sum of variation will increase\n\n\n\nLiguori & Moreira, 2018"
   },
   {
     "objectID": "index.html#f-statistic-1",
     "href": "index.html#f-statistic-1",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "F-Statistic",
-    "text": "F-Statistic\n\n\nDenominator: within group variation from the global mean\nAs within group variation increases, F-statistic gets smaller\n\nPenalizes for within group variation\n\n\n\n\nLiguori & Moreira, 2018"
+    "text": "F-Statistic\n\n\nDenominator: within group variation from the global mean\nAs within group variation increases, F-statistic gets smaller\n\npenalizes for within group variation\n\n\n\n\nLiguori & Moreira, 2018"
   },
   {
     "objectID": "index.html#f-statistic-2",

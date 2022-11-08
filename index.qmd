@@ -409,11 +409,6 @@ broom::tidy(a) %>%
 
 
 
-## Part XIII: How was F Distribution Built from ANOVA perspective?
-- diagram
-
-
-
 ## ANOVA R Output
 
 ```{r, echo = T, eval = F}
