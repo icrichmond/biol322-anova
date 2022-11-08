@@ -1,6 +1,7 @@
 ---
-title: "BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)"
-author: Isabella Richmond & Pedro Peres-Neto
+title: "Analysis of variance (ANOVA designs)"
+subtitle: "BIOL322 Lecture 17"
+author: Isabella Richmond & Dr. Pedro Peres-Neto
 date: November 10, 2022
 format: 
   revealjs:
@@ -27,7 +28,7 @@ format:
 
 
 
-## One-Way ANOVAs
+## What is an ANOVA?
 
 :::nonincremental
 - One-way = **one**  <w style = "color: #574571"> categorical </w> explanatory variable 
@@ -71,6 +72,7 @@ Background: photoreceptor cells influence our circadian rhythm based on how much
 - found evidence light exposure to knees can change circadian rhythm! But...
 
 
+
 ## Example - knees are the new eyeballs??
 
 :::: {.columns}
@@ -83,6 +85,8 @@ Background: photoreceptor cells influence our circadian rhythm based on how much
 ![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg){width='60%'}
 :::
 ::::
+
+
 
 ## Example - knees are not the new eyeballs! 
 - one huge problem in the study highlighted in a rebuttal paper ([Wright Jr. & Czeisler 2002](https://www.science.org/doi/10.1126/science.1071697))
@@ -104,23 +108,126 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 ```
 
 
-## Part III: Null & Alternative Hypothesis Testing 
-- statistical hypothesis testing**
-- quantitative approach and practical meaning
+
+## BREAK 
+::: nonincremental
+- 2 minute brain break! 
+:::
 
 
 
-## Part V: Demonstrate F-Statistic 
-- before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)
+## Statistical Hypothesis Testing
+
+Null hypothesis & alternative hypothesis framework:  
+
+- H~0~ = there is no *statistical* significance between the groups 
+- H~A~ = there is a *statistical* significance between the groups 
+- we either: 
+  a) reject the null hypothesis 
+  b) fail to reject the null hypothesis (**!= accept**)
+- statistical significance != biological significance 
 
 
-## Part VI: Variance AMONG MEANS 
-- ANOVAs are only variance among means, name is misleading 
+
+## The Sensitivity of the F-Statistic
+::: nonincremental
+- The F-statistic penalizes for variance **within groups**
+  - as variance **within groups** increases, F-statistic decreases even when the **between group** variance is the same
+
+```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
+library(reshape2)
+library(ggplot2)
+dat1 <- read.table(text = "info mean sd
+group1 10 1
+group2 20 1
+", header = TRUE)
+
+densities <- apply(dat1[, -1], 1, function(x) rnorm(n = 1000, mean = x[1], sd = x[2]))
+
+colnames(densities) <- dat1$info
+
+#Put into long format
+densities.m <- melt(densities)
+
+#Plot
+ggplot(densities.m, aes(value, linetype = Var2)) + 
+  geom_density() +
+  theme_classic() + 
+  labs(x = "", y = "") + 
+  theme(legend.position = 'none')
+
+```
+:::
+
+
+## One-Way ANOVAs
+
+- one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
+- the more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
+
+```{r, echo = F, eval = T}
+
+
+
+
+```
+
+
+## The Sensitivity of the F-Statistic
+
+:::nonincremental
+- these groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (**between group variance**) as the last slide
+  - they just have more **within group** variance
+  
+```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
+library(reshape2)
+library(ggplot2)
+dat2 <- read.table(text = "info mean sd
+group1 10 5
+group2 20 5
+", header = TRUE)
+
+densities <- apply(dat2[, -1], 1, function(x) rnorm(n = 1000, mean = x[1], sd = x[2]))
+
+colnames(densities) <- dat2$info
+
+#Put into long format
+densities.m <- melt(densities)
+
+#Plot
+ggplot(densities.m, aes(value, linetype = Var2)) + 
+  geom_density() +
+  theme_classic() + 
+  labs(x = "", y = "") + 
+  theme(legend.position = 'none')
+
+```
+:::
+
+
+
+## Analysis of Variance (AMONG MEANS)
+- ANOVAs are only variance among **means**, not variance in general
+
+
+
+
+
 
 
 ## Part VII: F-Statistic Workthrough 
 - why is penalization important
 - makes sampling error important
+
+
+
+## BREAK
+
+:::nonincremental 
+- 2 min brain break
+:::
+
+
 
 ## Part VIII: What des data look like in R?
 
@@ -134,7 +241,7 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 - or t = sqrt(F)
 
 
-## Part XI: Statistical Conclsion of Example
+## Part XI: Statistical Conclusion of Example
 
 
 ## Part XII: Reporting of ANOVA Tables
@@ -157,10 +264,3 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 ## Part XVII: ANOVA Assumptions
 
-
-
-## NOTES: 
-1-2 min break every 20 min 
-75 min lecture 
-matching tutorial 
-lecture slides 1 day before - 1 slide/page and 3 slides/page

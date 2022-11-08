@@ -9,9 +9,9 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.1.251">
 
-  <meta name="author" content="Isabella Richmond &amp; Pedro Peres-Neto">
+  <meta name="author" content="Isabella Richmond &amp; Dr.&nbsp;Pedro Peres-Neto">
   <meta name="dcterms.date" content="2022-11-10">
-  <title>BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</title>
+  <title>Analysis of variance (ANOVA designs)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,8 +325,9 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">BIOL322 Lecture 17 - Analysis of variance (ANOVA designs)</h1>
-  <p class="author">Isabella Richmond &amp; Pedro Peres-Neto</p>
+  <h1 class="title">Analysis of variance (ANOVA designs)</h1>
+  <p class="subtitle">BIOL322 Lecture 17</p>
+  <p class="author">Isabella Richmond &amp; Dr.&nbsp;Pedro Peres-Neto</p>
   <p class="date">November 10, 2022</p>
 </section>
 
@@ -349,8 +350,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="one-way-anovas" class="slide level2">
-<h2>One-Way ANOVAs</h2>
+<section id="what-is-an-anova" class="slide level2">
+<h2>What is an ANOVA?</h2>
 <div>
 <ul>
 <li>One-way = <strong>one</strong> <w style="color: #574571"> categorical </w> explanatory variable</li>
@@ -431,23 +432,82 @@
 <h2>Example - knees are not the new eyeballs!</h2>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section id="part-iii-null-alternative-hypothesis-testing" class="slide level2">
-<h2>Part III: Null &amp; Alternative Hypothesis Testing</h2>
+<section id="break" class="slide level2">
+<h2>BREAK</h2>
+<div>
 <ul>
-<li class="fragment">statistical hypothesis testing**</li>
-<li class="fragment">quantitative approach and practical meaning</li>
+<li>2 minute brain break!</li>
+</ul>
+</div>
+</section>
+<section id="statistical-hypothesis-testing" class="slide level2">
+<h2>Statistical Hypothesis Testing</h2>
+<p>Null hypothesis &amp; alternative hypothesis framework:</p>
+<ul>
+<li class="fragment">H<sub>0</sub> = there is no <em>statistical</em> significance between the groups</li>
+<li class="fragment">H<sub>A</sub> = there is a <em>statistical</em> significance between the groups</li>
+<li class="fragment">we either:
+<ol type="a">
+<li class="fragment">reject the null hypothesis</li>
+<li class="fragment">fail to reject the null hypothesis (<strong>!= accept</strong>)</li>
+</ol></li>
+<li class="fragment">statistical significance != biological significance</li>
 </ul>
 </section>
-<section id="part-v-demonstrate-f-statistic" class="slide level2">
-<h2>Part V: Demonstrate F-Statistic</h2>
+<section id="the-sensitivity-of-the-f-statistic" class="slide level2">
+<h2>The Sensitivity of the F-Statistic</h2>
+<div>
 <ul>
-<li class="fragment">before explaining equation, show how sensitive the test is using the F statistic (ie penalized for variance)</li>
+<li>The F-statistic penalizes for variance <strong>within groups</strong>
+<ul>
+<li>as variance <strong>within groups</strong> increases, F-statistic decreases even when the <strong>between group</strong> variance is the same</li>
+</ul></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="part-vi-variance-among-means" class="slide level2">
-<h2>Part VI: Variance AMONG MEANS</h2>
+<section id="one-way-anovas" class="slide level2">
+<h2>One-Way ANOVAs</h2>
 <ul>
-<li class="fragment">ANOVAs are only variance among means, name is misleading</li>
+<li class="fragment">one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic</li>
+<li class="fragment">the more different the means are, the more likely we are to <strong>reject the null hypothesis</strong> and determine them as significantly different</li>
+</ul>
+<div class="cell">
+
+</div>
+</section>
+<section id="the-sensitivity-of-the-f-statistic-1" class="slide level2">
+<h2>The Sensitivity of the F-Statistic</h2>
+<div>
+<ul>
+<li>these groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (<strong>between group variance</strong>) as the last slide
+<ul>
+<li>they just have more <strong>within group</strong> variance</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-of-variance-among-means" class="slide level2">
+<h2>Analysis of Variance (AMONG MEANS)</h2>
+<ul>
+<li class="fragment">ANOVAs are only variance among <strong>means</strong>, not variance in general</li>
 </ul>
 </section>
 <section id="part-vii-f-statistic-workthrough" class="slide level2">
@@ -456,6 +516,14 @@
 <li class="fragment">why is penalization important</li>
 <li class="fragment">makes sampling error important</li>
 </ul>
+</section>
+<section id="break-1" class="slide level2">
+<h2>BREAK</h2>
+<div>
+<ul>
+<li>2 min brain break</li>
+</ul>
+</div>
 </section>
 <section id="part-viii-what-des-data-look-like-in-r" class="slide level2">
 <h2>Part VIII: What des data look like in R?</h2>
@@ -473,8 +541,8 @@
 <li class="fragment">or t = sqrt(F)</li>
 </ul>
 </section>
-<section id="part-xi-statistical-conclsion-of-example" class="slide level2">
-<h2>Part XI: Statistical Conclsion of Example</h2>
+<section id="part-xi-statistical-conclusion-of-example" class="slide level2">
+<h2>Part XI: Statistical Conclusion of Example</h2>
 </section>
 <section id="part-xii-reporting-of-anova-tables" class="slide level2">
 <h2>Part XII: Reporting of ANOVA Tables</h2>
@@ -497,10 +565,6 @@
 </section>
 <section id="part-xvii-anova-assumptions" class="slide level2">
 <h2>Part XVII: ANOVA Assumptions</h2>
-</section>
-<section id="notes" class="slide level2">
-<h2>NOTES:</h2>
-<p>1-2 min break every 20 min 75 min lecture matching tutorial lecture slides 1 day before - 1 slide/page and 3 slides/page</p>
 
 <div class="footer footer-default">
 
