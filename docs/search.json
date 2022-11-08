@@ -165,7 +165,7 @@
     "href": "index.html#one-way-anovas",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "One-Way ANOVAs",
-    "text": "One-Way ANOVAs\n\none-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic\nthe more different the means are, the more likely we are to reject the null hypothesis and determine them as significantly different"
+    "text": "One-Way ANOVAs\n\none-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic\nthe more different the groups are, the more likely we are to reject the null hypothesis and determine them as significantly different"
   },
   {
     "objectID": "index.html#example---knees-are-the-new-eyeballs",
@@ -249,7 +249,7 @@
     "href": "index.html#analysis-of-variance-among-means",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Analysis of Variance (AMONG MEANS)",
-    "text": "Analysis of Variance (AMONG MEANS)\n\nANOVAs are only variance among means, not variance in general"
+    "text": "Analysis of Variance (AMONG MEANS)\n\n\nANOVAs are only variance among means, not variance in general\n\n\\[F = \\frac{s^2~between~}{s^2~within~} = \\frac{\\frac{\\sum \\limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\\frac{\\sum \\limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\\]"
   },
   {
     "objectID": "index.html#break-1",

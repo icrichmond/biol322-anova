@@ -129,6 +129,20 @@ Null hypothesis & alternative hypothesis framework:
 
 
 
+## One-Way ANOVAs
+
+- one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
+- the more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
+
+```{r, echo = F, eval = T}
+
+
+
+
+```
+
+
+
 ## The Sensitivity of the F-Statistic
 ::: nonincremental
 - The F-statistic penalizes for variance **within groups**
@@ -159,18 +173,6 @@ ggplot(densities.m, aes(value, linetype = Var2)) +
 ```
 :::
 
-
-## One-Way ANOVAs
-
-- one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
-- the more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
-
-```{r, echo = F, eval = T}
-
-
-
-
-```
 
 
 ## The Sensitivity of the F-Statistic
@@ -207,13 +209,13 @@ ggplot(densities.m, aes(value, linetype = Var2)) +
 
 
 ## Analysis of Variance (AMONG MEANS)
+
+:::nonincremental
 - ANOVAs are only variance among **means**, not variance in general
 
 
-
-
-
-
+$$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}$$
+:::
 
 ## Part VII: F-Statistic Workthrough 
 - why is penalization important

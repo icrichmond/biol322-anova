@@ -454,6 +454,16 @@
 <li class="fragment">statistical significance != biological significance</li>
 </ul>
 </section>
+<section id="one-way-anovas" class="slide level2">
+<h2>One-Way ANOVAs</h2>
+<ul>
+<li class="fragment">one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic</li>
+<li class="fragment">the more different the groups are, the more likely we are to <strong>reject the null hypothesis</strong> and determine them as significantly different</li>
+</ul>
+<div class="cell">
+
+</div>
+</section>
 <section id="the-sensitivity-of-the-f-statistic" class="slide level2">
 <h2>The Sensitivity of the F-Statistic</h2>
 <div>
@@ -467,21 +477,11 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:60.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</section>
-<section id="one-way-anovas" class="slide level2">
-<h2>One-Way ANOVAs</h2>
-<ul>
-<li class="fragment">one-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic</li>
-<li class="fragment">the more different the means are, the more likely we are to <strong>reject the null hypothesis</strong> and determine them as significantly different</li>
-</ul>
-<div class="cell">
-
 </div>
 </section>
 <section id="the-sensitivity-of-the-f-statistic-1" class="slide level2">
@@ -506,9 +506,12 @@
 </section>
 <section id="analysis-of-variance-among-means" class="slide level2">
 <h2>Analysis of Variance (AMONG MEANS)</h2>
+<div>
 <ul>
-<li class="fragment">ANOVAs are only variance among <strong>means</strong>, not variance in general</li>
+<li>ANOVAs are only variance among <strong>means</strong>, not variance in general</li>
 </ul>
+<p><span class="math display">\[F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (X~i~-X)^2}{(g-1)}}{\frac{\sum \limits _{i=1} ^{g} (X-X~i~)^2}{(n-g)}}\]</span></p>
+</div>
 </section>
 <section id="part-vii-f-statistic-workthrough" class="slide level2">
 <h2>Part VII: F-Statistic Workthrough</h2>
