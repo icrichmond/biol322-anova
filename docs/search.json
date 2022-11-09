@@ -172,7 +172,7 @@
     "href": "index.html#example---knees-are-the-new-eyeballs",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Example - knees are the new eyeballs??",
-    "text": "Example - knees are the new eyeballs??\nBackground: photoreceptor cells influence our circadian rhythm based on how much light they receive & when\n\nMammals thought to only have these cells in our eyeballs\n\nDid experiment to test if these cells are present behind the knees (Campbell & Murphy, 1998)\n33 trials of 2 groups: control or experimental (knee)\nFound evidence light exposure to knees can change circadian rhythm! But…"
+    "text": "Example - knees are the new eyeballs??\nBackground: photoreceptor cells influence our circadian rhythm based on how much light they receive & when\n\nMammals thought to only have these cells in our eyes\n\nDid experiment to test if these cells are present behind the knees (Campbell & Murphy, 1998)\n33 trials of 2 groups: control or experimental (knee)\nFound evidence light exposure to knees can change circadian rhythm! But…"
   },
   {
     "objectID": "index.html#example---knees-are-the-new-eyeballs-1",
@@ -193,7 +193,7 @@
     "href": "index.html#example---knees-are-not-the-new-eyeballs",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Example - knees are not the new eyeballs!",
-    "text": "Example - knees are not the new eyeballs!\n\nOne huge problem in the study highlighted in a rebuttal paper (Wright Jr. & Czeisler 2002)\nInitial study did not cover patients eyes during the experiment!\nNew study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)\nNo effect of light exposure to knees\nPerfect case for an ANOVA!"
+    "text": "Example - knees are not the new eyeballs!\n\nOne huge problem in the study highlighted in a rebuttal paper (Wright Jr. & Czeisler 2002)\nInitial study did not cover patients eyes during the experiment!\nNew study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)\nNo effect of light exposure to knees"
   },
   {
     "objectID": "index.html#example---knees-are-not-the-new-eyeballs-1",
@@ -221,7 +221,7 @@
     "href": "index.html#statistical-hypothesis-testing",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Statistical Hypothesis Testing",
-    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no statistical significance between the groups\nHA = there is a statistical significance between the groups\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (!= accept)\n\nStatistical significance != biological significance"
+    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no difference in the means across groups\nHA = at least two groups differ in their means\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (we do not accept H0)\n\nStatistical significance != biological significance"
   },
   {
     "objectID": "index.html#the-sensitivity-of-the-f-statistic",
@@ -403,7 +403,7 @@
     "href": "index.html#anovas-are-one-tailed-tests",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "ANOVAs are one-tailed tests",
-    "text": "ANOVAs are one-tailed tests\n\n\nF is squared, so test is inherently one-tailed\nCannot have negative variation\n\n\n\n“The pdf of the F distribution” by IkamusumeFan is licensed under CC BY-SA 4.0"
+    "text": "ANOVAs are one-tailed tests\n\n\nWe are only interested in when F is large\nLarge F = large variation among group means\n\n\n\n“The pdf of the F distribution” by IkamusumeFan is licensed under CC BY-SA 4.0"
   },
   {
     "objectID": "index.html#research-conclusion",
@@ -487,7 +487,7 @@
     "href": "index-studentversion.html#statistical-hypothesis-testing",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "Statistical Hypothesis Testing",
-    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no statistical significance between the groups\nHA = there is a statistical significance between the groups\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (!= accept)\n\nStatistical significance != biological significance"
+    "text": "Statistical Hypothesis Testing\nNull hypothesis & alternative hypothesis framework:\n\nH0 = there is no difference in the means across groups\nHA = at least two groups differ in their means\nwe either:\n\nreject the null hypothesis\nfail to reject the null hypothesis (we do not accept H0)\n\nStatistical significance != biological significance"
   },
   {
     "objectID": "index-studentversion.html#one-way-anovas",
@@ -620,7 +620,7 @@
     "href": "index-studentversion.html#anovas-are-one-tailed-tests",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "ANOVAs are one-tailed tests",
-    "text": "ANOVAs are one-tailed tests\n\n\nF is squared, so test is inherently one-tailed\nCannot have negative variation\n\n\n\n“The pdf of the F distribution” by IkamusumeFan is licensed under CC BY-SA 4.0"
+    "text": "ANOVAs are one-tailed tests\n\n\nWe are only interested in when F is large\nLarge F = large variation among group means\n\n\n\n“The pdf of the F distribution” by IkamusumeFan is licensed under CC BY-SA 4.0"
   },
   {
     "objectID": "index-studentversion.html#research-conclusion",
@@ -646,6 +646,13 @@
   {
     "objectID": "index-studentversion.html#t2-f",
     "href": "index-studentversion.html#t2-f",
+    "title": "Analysis of variance (ANOVA designs)",
+    "section": "t2 = F",
+    "text": "t2 = F\n\n\nANOVA:\n\n\n            Df Sum Sq Mean Sq F value Pr(>F)\ntreatment    1  0.003  0.0027   0.005  0.942\nResiduals   13  6.422  0.4940               \n\n\n\nt-test:\n\n\n\n    Welch Two Sample t-test\n\ndata:  shift by treatment\nt = 0.072846, df = 11.343, p-value = 0.9432\nalternative hypothesis: true difference in means between group control and group knee is not equal to 0\n95 percent confidence interval:\n -0.7847452  0.8386737\nsample estimates:\nmean in group control    mean in group knee \n           -0.3087500            -0.3357143"
+  },
+  {
+    "objectID": "index.html#t2-f",
+    "href": "index.html#t2-f",
     "title": "Analysis of variance (ANOVA designs)",
     "section": "t2 = F",
     "text": "t2 = F\n\n\nANOVA:\n\n\n            Df Sum Sq Mean Sq F value Pr(>F)\ntreatment    1  0.003  0.0027   0.005  0.942\nResiduals   13  6.422  0.4940               \n\n\n\nt-test:\n\n\n\n    Welch Two Sample t-test\n\ndata:  shift by treatment\nt = 0.072846, df = 11.343, p-value = 0.9432\nalternative hypothesis: true difference in means between group control and group knee is not equal to 0\n95 percent confidence interval:\n -0.7847452  0.8386737\nsample estimates:\nmean in group control    mean in group knee \n           -0.3087500            -0.3357143"

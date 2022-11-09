@@ -7,11 +7,11 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.251">
+  <meta name="generator" content="quarto-1.2.237">
 
   <meta name="author" content="Isabella Richmond &amp; Dr.&nbsp;Pedro Peres-Neto">
   <meta name="dcterms.date" content="2022-11-10">
-  <title>Analysis of variance (ANOVA designs)</title>
+  <title>biol322-anova - Analysis of variance (ANOVA designs)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,13 +388,20 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Analysis of variance (ANOVA designs)</h1>
   <p class="subtitle">BIOL322 Lecture 17</p>
-  <p class="author">Isabella Richmond &amp; Dr.&nbsp;Pedro Peres-Neto</p>
-  <p class="date">November 10, 2022</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Isabella Richmond &amp; Dr.&nbsp;Pedro Peres-Neto 
+</div>
+</div>
+</div>
+
+  <p class="date">11/10/22</p>
+</section>
 <section id="learning-goals" class="slide level2">
 <h2>Learning Goals</h2>
 <ul>
@@ -425,7 +432,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:70.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
@@ -455,7 +462,7 @@
 <h2>Example - knees are the new eyeballs??</h2>
 <p>Background: photoreceptor cells influence our circadian rhythm based on how much light they receive &amp; when</p>
 <ul>
-<li class="fragment">Mammals thought to only have these cells in our eyeballs<br>
+<li class="fragment">Mammals thought to only have these cells in our eyes<br>
 </li>
 <li class="fragment">Did experiment to test if these cells are present behind the knees (<a href="https://www.science.org/doi/10.1126/science.279.5349.396">Campbell &amp; Murphy, 1998</a>)</li>
 <li class="fragment">33 trials of 2 groups: control or experimental (knee)</li>
@@ -468,14 +475,14 @@
 <div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="presentation_imgs/phasedelay.jpeg" style="width:60.0%"></p>
+<p><img data-src="presentation_imgs/phasedelay.jpeg" style="width:50.0%"></p>
 <p></p><figcaption>Figure 1. Phase Delay</figcaption><p></p>
 </figure>
 </div>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="presentation_imgs/phaseadvance.jpeg" style="width:60.0%"></p>
+<p><img data-src="presentation_imgs/phaseadvance.jpeg" style="width:50.0%"></p>
 <p></p><figcaption>Figure 2. Phase Advance</figcaption><p></p>
 </figure>
 </div>
@@ -489,7 +496,6 @@
 <li class="fragment">Initial study did not cover patients eyes during the experiment!</li>
 <li class="fragment">New study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)</li>
 <li class="fragment">No effect of light exposure to knees</li>
-<li class="fragment">Perfect case for an ANOVA!</li>
 </ul>
 </section>
 <section id="example---knees-are-not-the-new-eyeballs-1" class="slide level2">
@@ -508,12 +514,12 @@
 <h2>Statistical Hypothesis Testing</h2>
 <p>Null hypothesis &amp; alternative hypothesis framework:</p>
 <ul>
-<li class="fragment">H<sub>0</sub> = there is no <em>statistical</em> significance between the groups</li>
-<li class="fragment">H<sub>A</sub> = there is a <em>statistical</em> significance between the groups</li>
+<li class="fragment">H<sub>0</sub> = there is no difference in the means across groups</li>
+<li class="fragment">H<sub>A</sub> = at least two groups differ in their means</li>
 <li class="fragment">we either:
 <ol type="a">
 <li class="fragment">reject the null hypothesis</li>
-<li class="fragment">fail to reject the null hypothesis (<strong>!= accept</strong>)</li>
+<li class="fragment">fail to reject the null hypothesis (<strong>we do not accept H<sub>0</sub></strong>)</li>
 </ol></li>
 <li class="fragment">Statistical significance != biological significance</li>
 </ul>
@@ -524,9 +530,6 @@
 <li class="fragment">One-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic</li>
 <li class="fragment">The more different the groups are, the more likely we are to <strong>reject the null hypothesis</strong> and determine them as significantly different</li>
 </ul>
-<div class="cell">
-
-</div>
 </section>
 <section id="the-sensitivity-of-the-f-statistic" class="slide level2">
 <h2>The Sensitivity of the F-Statistic</h2>
@@ -541,7 +544,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:60.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:55.0%"></p>
 </figure>
 </div>
 </div>
@@ -561,7 +564,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:60.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" style="width:45.0%"></p>
 </figure>
 </div>
 </div>
@@ -666,16 +669,8 @@
 <span id="cb3-15"><a href="#cb3-15"></a>ttest <span class="ot">&lt;-</span> <span class="fu">t.test</span>(shift <span class="sc">~</span> treatment, <span class="at">data =</span> df_s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="comparison-of-two-groups-1" class="slide level2">
-<h2>Comparison of Two Groups</h2>
-<div>
-<ul>
-<li><span class="math inline">\(t^2 = F\)</span>
-<ul>
-<li><span class="math inline">\(0.073^2 = 0.005\)</span></li>
-</ul></li>
-</ul>
-</div>
+<section id="t2-f" class="slide level2">
+<h2>t<sup>2</sup> = F</h2>
 <div class="columns">
 <div class="column">
 <p>ANOVA:</p>
@@ -714,7 +709,7 @@ mean in group control    mean in group knee
 <li class="fragment">We <strong>do not accept H<sub>0</sub></strong>, we only fail to reject</li>
 </ul>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="reporting-anovas" class="slide level2">
 <h2>Reporting ANOVAs</h2>
 <ul>
@@ -1235,8 +1230,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <h2>ANOVAs are one-tailed tests</h2>
 <div>
 <ul>
-<li>F is squared, so test is inherently one-tailed</li>
-<li>Cannot have negative variation</li>
+<li>We are only interested in when F is large</li>
+<li>Large F = large variation among group means</li>
 </ul>
 </div>
 
@@ -1494,12 +1489,15 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -1510,13 +1508,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -1568,7 +1559,24 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -1606,24 +1614,42 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

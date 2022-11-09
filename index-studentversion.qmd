@@ -155,11 +155,11 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 Null hypothesis & alternative hypothesis framework:  
 
-- H~0~ = there is no *statistical* significance between the groups 
-- H~A~ = there is a *statistical* significance between the groups 
+- H~0~ = there is no difference in the means across groups
+- H~A~ = at least two groups differ in their means 
 - we either: 
   a) reject the null hypothesis 
-  b) fail to reject the null hypothesis (**!= accept**)
+  b) fail to reject the null hypothesis (**we do not accept H~0~**)
 - Statistical significance != biological significance 
 
 
@@ -566,8 +566,8 @@ summary(a)
 ## ANOVAs are one-tailed tests
 
 :::nonincremental
-- F is squared, so test is inherently one-tailed 
-- Cannot have negative variation
+- We are only interested in when F is large 
+- Large F = large variation among group means
 :::
 
 !["The pdf of the F distribution" by IkamusumeFan is licensed under CC BY-SA 4.0](presentation_imgs/fdist.png)

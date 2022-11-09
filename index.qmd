@@ -9,8 +9,6 @@ format:
     incremental: true
 ---
 
-
-
 ## Learning Goals
 
 - *Understand* what an ANOVA is 
@@ -34,7 +32,7 @@ format:
 - One-way = **one**  <w style = "color: #574571"> categorical </w> explanatory variable 
 - Statistical test used to compare variation across means of 2+ <w style = "color: #574571"> groups </w>
 
-```{r, echo = F, eval = T, fig.align='center', out.width='70%'}
+```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
 library(ggpubr)
 d <- read.csv("presentation_imgs/chap15e1KneesWhoSayNight.csv")
 ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", palette = c("#e7ad52",  "#2c4b27", "#574571")) +
@@ -66,7 +64,7 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 Background: photoreceptor cells influence our circadian rhythm based on how much light they receive & when
 
-- Mammals thought to only have these cells in our eyeballs   
+- Mammals thought to only have these cells in our eyes  
 - Did experiment to test if these cells are present behind the knees ([Campbell & Murphy, 1998](https://www.science.org/doi/10.1126/science.279.5349.396))
 - 33 trials of 2 groups: control or experimental (knee)
 - Found evidence light exposure to knees can change circadian rhythm! But...
@@ -78,11 +76,11 @@ Background: photoreceptor cells influence our circadian rhythm based on how much
 :::: {.columns}
 
 ::: {.column}
-![Figure 1. Phase Delay](presentation_imgs/phasedelay.jpeg){width='60%'}
+![Figure 1. Phase Delay](presentation_imgs/phasedelay.jpeg){width='50%'}
 :::
 
 ::: {.column}
-![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg){width='60%'}
+![Figure 2. Phase Advance](presentation_imgs/phaseadvance.jpeg){width='50%'}
 :::
 ::::
 
@@ -93,7 +91,6 @@ Background: photoreceptor cells influence our circadian rhythm based on how much
 - Initial study did not cover patients eyes during the experiment! 
 - New study with 3 groups: control, light exposure with blindfold (knee), light exposure without blindfold (eyes)
 - No effect of light exposure to knees
-- Perfect case for an ANOVA! 
 
 
 
@@ -120,11 +117,11 @@ ggboxplot(d, x = "treatment", y = "shift", add = "jitter", color = "treatment", 
 
 Null hypothesis & alternative hypothesis framework:  
 
-- H~0~ = there is no *statistical* significance between the groups 
-- H~A~ = there is a *statistical* significance between the groups 
+- H~0~ = there is no difference in the means across groups
+- H~A~ = at least two groups differ in their means 
 - we either: 
   a) reject the null hypothesis 
-  b) fail to reject the null hypothesis (**!= accept**)
+  b) fail to reject the null hypothesis (**we do not accept H~0~**)
 - Statistical significance != biological significance 
 
 
@@ -134,13 +131,6 @@ Null hypothesis & alternative hypothesis framework:
 - One-way ANOVAs test if there is a statistically significant difference between the means of 2+ groups using the F-statistic 
 - The more different the groups are, the more likely we are to **reject the null hypothesis** and determine them as significantly different
 
-```{r, echo = F, eval = T}
-
-
-
-
-```
-
 
 
 ## The Sensitivity of the F-Statistic
@@ -148,7 +138,7 @@ Null hypothesis & alternative hypothesis framework:
 - The F-statistic penalizes for variance **within groups**
   - as variance **within groups** increases, F-statistic decreases even when the **between group** variance is the same
 
-```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
+```{r, echo = F, eval = T, fig.align='center', out.width='55%'}
 library(reshape2)
 library(ggplot2)
 dat1 <- read.table(text = "info mean sd
@@ -181,7 +171,7 @@ ggplot(densities.m, aes(value, linetype = Var2)) +
 - These groups have a lower F-statistic (and therefore are less likely to be statistically significant), even though they have the same means (**between group variance**) as the last slide
   - they just have more **within group** variance
   
-```{r, echo = F, eval = T, fig.align='center', out.width='60%'}
+```{r, echo = F, eval = T, fig.align='center', out.width='45%'}
 library(reshape2)
 library(ggplot2)
 dat2 <- read.table(text = "info mean sd
@@ -227,6 +217,7 @@ $$F = \frac{s^2~between~}{s^2~within~} = \frac{\frac{\sum \limits _{i=1} ^{g}  (
 :::
 
 ![Liguori & Moreira, 2018](presentation_imgs/variation.png)
+
 
 
 ## F-Statistic  
@@ -290,6 +281,8 @@ summary(anova)
 
 ```
 
+
+
 ## Comparison of Two Groups
 
 :::nonincremental
@@ -318,12 +311,7 @@ ttest <- t.test(shift ~ treatment, data = df_s)
 
 
 
-## Comparison of Two Groups
-
-:::nonincremental
-- $t^2 = F$ 
-  - $0.073^2 = 0.005$
-:::
+## t^2^ = F 
 
 ::::{.columns}
 
@@ -350,6 +338,7 @@ t.test(shift ~ treatment, data = d_s)
 :::
 
 ::::
+
 
 
 ## Statistical Conclusion
@@ -399,6 +388,7 @@ broom::tidy(a) %>%
     p.value = "p-value")
   
 ```
+
 
 
 ## BREAK 
@@ -462,11 +452,13 @@ summary(a)
 ## ANOVAs are one-tailed tests
 
 :::nonincremental
-- F is squared, so test is inherently one-tailed 
-- Cannot have negative variation
+- We are only interested in when F is large 
+- Large F = large variation among group means
 :::
 
 !["The pdf of the F distribution" by IkamusumeFan is licensed under CC BY-SA 4.0](presentation_imgs/fdist.png)
+
+
 
 ## Research Conclusion
 
@@ -493,3 +485,4 @@ summary(a)
 - Thank you!! 
 - Extra videos on course bookdown
 :::
+
